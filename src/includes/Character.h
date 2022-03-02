@@ -6,6 +6,7 @@ class Character {
     public :
         
     protected :
+        
 
 };
 
