@@ -4,9 +4,14 @@
 class Tile {
 
     public :
-        Tile(); 
+        //constructeurs
+        Tile(int x, int y); 
+
+        //getters
         int getX() const;
         int getY() const;
+
+        //affichage
         void showTile() const = 0;
 
     protected :
