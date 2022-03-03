@@ -13,12 +13,13 @@ class Map {
         void showMap() const;
 
     private :
+        int m_nbLines;
+        int m_nbColumns;
         Tile* m_board[][];
-        int m_column;
-        int m_line;
         Enemy* m_enemies[];
         Item* m_items[];
-        Tile m_goal;
+        Bomberman* m_player;
+        Tile* m_goal;
         
 
 #endif
