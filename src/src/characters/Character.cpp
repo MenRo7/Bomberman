@@ -1,5 +1,7 @@
 #include "../../includes/characters/Character.h"
 
+using namespace utils;
+
 Character::Character(Tile& t) : m_health(100), m_speed(1), m_position(0)
 {
     m_position = t(0,0);
