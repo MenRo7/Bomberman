@@ -4,11 +4,12 @@
 class Tile {
 
     public :
-        Tile();
-        void showTile() const;
+        Tile(); 
         int getX() const;
         int getY() const;
-    private :
+        void showTile() const = 0;
+
+    protected :
         int x;
         int y;
 };
