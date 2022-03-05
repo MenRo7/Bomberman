@@ -7,24 +7,35 @@ Character::Character(Tile& t) : m_health(100), m_speed(1), m_position(0)
     m_position = t(0,0);
 }
 
-void Character::moveUp() 
+bool Character::move()
 {
-    m_position = 
+    bool back = 1;
+
+    switch(direction)
+    {
+        case utils::Direction::TOP :
+            m_position.setX(m_position.getX()-m_speed);
+            break;
+
+        case utils::Direction::BOTTOM :
+            m_position.setX(m_position.getX()+m_speed);
+            break;
+
+        case utils::Direction::LEFT :
+            m_position.setY(m_position.getY()-m_speed);
+            break;
+
+        case utils::Direction::RIGHT :
+            m_position.setY(m_position.getY()+m_speed);
+            break;
+
+        default:
+            back = 0;
+            break;
+    }
+
+    return back;
 }
-
-void Character::moveDown()
-{
-
-}
-
-void Character::moveLeft()
-{
-
-}
-
-void Character::moveRight()
-{
-
 }
 
 int Character::getHealth() const

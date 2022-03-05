@@ -3,12 +3,17 @@
 
 namespace utils {
 
-    enum direction Direction {
+    enum Direction {
         TOP, 
         BOTTOM, 
         LEFT, 
         RIGHT, 
         STAY
+    };
+
+    enum BombState {
+        INERT,
+        EXPLOSING
     };
 }
 

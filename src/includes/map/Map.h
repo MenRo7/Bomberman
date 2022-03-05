@@ -15,7 +15,7 @@ class Map {
     private :
         int m_nbLines;
         int m_nbColumns;
-        Tile* m_board[][];
+        Tile m_board[][];
         Enemy* m_enemies[];
         Item* m_items[];
         Bomberman* m_player;

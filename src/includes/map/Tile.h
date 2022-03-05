@@ -11,8 +11,12 @@ class Tile {
         int getX() const;
         int getY() const;
 
+        //setters
+        void setX(int x);
+        void setY(int y);
+
         //affichage
-        void showTile() const = 0;
+        void showTile();
 
     protected :
         int m_x;

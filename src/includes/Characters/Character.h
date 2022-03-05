@@ -10,10 +10,7 @@ class Character {
         Character(Character&& deplace) = delete;
 
         //déplacements
-        void moveUp();
-        void moveDown();
-        void moveLeft();
-        void moveRight();
+        void move();
 
         //getters
         int getHealth() const;
