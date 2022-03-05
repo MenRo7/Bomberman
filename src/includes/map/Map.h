@@ -1,6 +1,8 @@
 #ifndef __MAP__
 #define __MAP__
 
+#include<iostream>
+
 class Map {
 
     public :
@@ -18,7 +20,7 @@ class Map {
         Tile m_board[][];
         Enemy* m_enemies[];
         Item* m_items[];
-        Bomberman* m_player;
+        Bomberman m_player;
         Tile* m_goal;
         
 

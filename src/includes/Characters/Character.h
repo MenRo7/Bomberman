@@ -1,6 +1,8 @@
 #ifndef __CHARACTER__
 #define __CHARACTER__
 
+#include<iostream>
+
 class Character {
 
     public :
@@ -10,7 +12,7 @@ class Character {
         Character(Character&& deplace) = delete;
 
         //déplacements
-        void move();
+        void move(utils::Direction direction);
 
         //getters
         int getHealth() const;

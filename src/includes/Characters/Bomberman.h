@@ -1,6 +1,9 @@
 #ifndef __BOMBERMAN__
 #define __BOMBERMAN__
 
+#include "../../includes/characters/Character.h"
+#include<iostream>
+
 class Bomberman : public Character {
 
     public :

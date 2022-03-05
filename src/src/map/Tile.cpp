@@ -27,5 +27,5 @@ void Tile::setY(int y)
 
 void Tile::showTile()
 {
-    std::cout << "|_|" << std::endl;
+    std::cout << "Tile [" << m_x << "][" << m_y << "]" << std::endl;
 }

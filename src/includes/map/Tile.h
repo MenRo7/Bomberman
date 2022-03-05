@@ -1,6 +1,8 @@
 #ifndef __TILE__
 #define __TILE__
 
+#include<iostream>
+
 class Tile {
 
     public :

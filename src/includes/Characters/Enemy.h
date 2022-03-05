@@ -1,6 +1,9 @@
 #ifndef __ENEMY__
 #define __ENEMY__
 
+#include "../../includes/characters/Character.h"
+#include<iostream>
+
 class Enemy : public Character {
 
     public :
@@ -8,6 +11,7 @@ class Enemy : public Character {
         Enemy();
         Enemy(const Enemy& other) = delete;
         Enemy(Enemy&& deplace) = delete;
+        void showEnemy() const = 0;
         
     protected :
         int m_damage();
