@@ -1,6 +1,6 @@
 #include "../../includes/map/Map.h"
 
-Map::Map() : m_nbLines(8), m_nbColumns(8), 
+Map::Map() : m_nbLines(8), m_nbColumns(8)
 {
     for(int i = 0 ; i < m_nbLines ; i++)
     {
