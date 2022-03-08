@@ -1,6 +1,9 @@
 #ifndef __CHARACTER__
 #define __CHARACTER__
 
+#include "../../includes/map/Tile.h"
+#include "../../includes/utils/utils.h"
+
 #include<iostream>
 
 class Character {

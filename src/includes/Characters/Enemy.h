@@ -2,6 +2,8 @@
 #define __ENEMY__
 
 #include "../../includes/characters/Character.h"
+#include "../../includes/map/Tile.h"
+
 #include<iostream>
 
 class Enemy : public Character {

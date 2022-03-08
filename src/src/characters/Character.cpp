@@ -1,5 +1,4 @@
 #include "../../includes/characters/Character.h"
-#include "../../includes/utils/utils.h"
 
 using namespace utils;
 

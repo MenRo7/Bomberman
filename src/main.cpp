@@ -1,7 +1,10 @@
-#include "../../includes/"
+#include "../../includes/Bomberman.h"
+#include "../../includes/map/Map.h"
 int main()
 {
-    Bomberman player;
+    Map board;
+
+    board.showMap();
     
     return 0;
 }

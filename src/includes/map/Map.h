@@ -1,6 +1,10 @@
 #ifndef __MAP__
 #define __MAP__
 
+#include "../../includes/map/Tile.h"
+#include "../../includes/characters/Bomberman.h"
+#include "../../includes/items/Item.h"
+
 #include<iostream>
 
 class Map {
