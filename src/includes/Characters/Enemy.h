@@ -9,10 +9,10 @@
 class Enemy : public Character {
 
     public :
-        //constructeurs
+        // constructeurs
         Enemy();
 
-        //
+        // affichage 
         void showEnemy() const = 0;
         
     protected :

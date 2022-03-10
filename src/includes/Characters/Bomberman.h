@@ -8,13 +8,13 @@
 class Bomberman : public Character {
 
     public :
-        //constructeurs
+        // constructeurs
         Bomberman();
 
-        //poser une bombe
+        // poser une bombe
         void putBomb();
 
-        //affichage
+        // affichage Bomberman
         void show() const override;
         
     private :

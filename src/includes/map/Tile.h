@@ -6,18 +6,18 @@
 class Tile {
 
     public :
-        //constructeurs
+        // constructeurs
         Tile(int x = 0, int y = 0);
 
-        //getters
+        // getters
         int getX() const;
         int getY() const;
 
-        //setters
+        // setters
         void setX(int x);
         void setY(int y);
 
-        //affichage
+        // affichage Tile
         void showTile();
 
     protected :

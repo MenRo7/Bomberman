@@ -11,11 +11,14 @@
 class Map {
 
     public :
-        //constructeurs
+        // constructeurs
         Map();
         Map(int lines = 5, int columns = 10);
 
-        //affichage
+        // création Map
+        void createMap();
+
+        // affichage Map
         void showMap() const;
 
     private :

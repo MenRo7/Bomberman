@@ -9,23 +9,23 @@
 class Character {
 
     public :
-        //constructeurs
+        // constructeurs
         Character(Tile& t);
 
-        //déplacements
+        // déplacements
         void move(utils::Direction direction);
 
-        //getters
+        // getters
         int getHealth() const;
         int getSpeed() const;
         Tile getPosition() const;
 
-        //setters
+        // setters
         void setHealth(int h);
         void setSpeed(int s);
         void setPosition(Tile t);
 
-        //affichage
+        // affichage (virtuelle pure)
         virtual void show() const = 0;
         
     protected :

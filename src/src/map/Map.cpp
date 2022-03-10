@@ -24,6 +24,12 @@ Map::Map(int lines, int columns) : m_nbLines(lines), m_nbColumns(columns)
 
 void Map::showMap() const
 {
+    for(int k = 0 ; k < m_nbColumns ; k++)
+    {
+        cout << " ____";
+    }
+    cout << endl;
+
     for(int i = 0 ; i < m_nbLines ; i++)
     {
         for(int j = 0 ; j < m_nbColumns ; j++)
