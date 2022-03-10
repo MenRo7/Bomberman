@@ -1,25 +1,23 @@
 #include "../../includes/map/Map.h"
 
-Map::Map() : m_nbLines(8), m_nbColumns(8)
+using namespace std;
+
+Map::Map(int lines, int columns) : m_nbLines(lines), m_nbColumns(columns)
 {
-    for(int i = 0 ; i < m_nbLines ; i++)
-    {
-        for(int j = 0 ; j < m_nbColumns ; j++)
-        {
-            Tile t(i,j);
-            m_board[i][j] = &t;
-        }
-    }
-    m_goal = &m_board[7][7];
+   for(int i = 0 ; i < m_nbLines ; i++)
+   {
+       m_board.push_back(vector<Tile>(m_nbColumns));
+
+       for(int j = 0 ; j < m_nbColumns ; j++)
+       {
+           Tile t(i ,j);
+           m_board[i][j] = t;
+       }
+   }
 }
 
-    void Map::showMap() const
-    {
-        for(int i = 0 ; i < m_nbLines ; i++)
-        {
-            for(int j = 0 ; j < m_nbColumns ; j++)
-            {
-                m_board[i][j].Tile::showTile();
-            }
-        }
-    }
+/*void Map::showMap() const
+{
+    for(const Tile& it : m_board){
+        it.Tile::showTile();
+}*/

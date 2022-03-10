@@ -28,7 +28,7 @@ class Character {
         void setPosition(Tile t);
 
         //affichage
-        void show() const = 0;
+        virtual void show() const = 0;
         
     protected :
         int m_health;

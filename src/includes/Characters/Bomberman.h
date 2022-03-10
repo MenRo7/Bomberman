@@ -17,7 +17,7 @@ class Bomberman : public Character {
         void putBomb();
 
         //affichage
-        void show() const;
+        void show() const override;
         
     private :
         int m_nbBomb;

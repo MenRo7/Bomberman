@@ -6,27 +6,29 @@
 #include "../../includes/items/Item.h"
 
 #include<iostream>
+#include<vector>
 
 class Map {
 
     public :
         //constructeurs
-        Map();
+        Map(int lines, int columns);
         Map(const Map& other) = delete;
         Map(Map&& deplace) = delete;
 
         //affichage
-        void showMap() const;
+        //void showMap() const;
 
     private :
         int m_nbLines;
         int m_nbColumns;
-        Tile m_board[][];
-        Enemy* m_enemies[];
-        Item* m_items[];
-        Bomberman m_player;
-        Tile* m_goal;
+        std::vector<std::vector<Tile>> m_board;
+        //Enemy* m_enemies[];
+        //Item* m_items[];
+        //Bomberman m_player;
+        //Tile* m_goal;
         
+};
 
 #endif
 

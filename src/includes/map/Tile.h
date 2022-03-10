@@ -25,4 +25,6 @@ class Tile {
         int m_y;
 };
 
+std::ostream& operator<<(std::ostream& os, const Tile& t);
+
 #endif

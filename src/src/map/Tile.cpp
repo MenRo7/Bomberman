@@ -1,5 +1,7 @@
 #include "../../includes/map/Tile.h"
 
+using namespace std;
+
 Tile::Tile(int x, int y) : m_x(x), m_y(y)
 {
     //
@@ -27,5 +29,12 @@ void Tile::setY(int y)
 
 void Tile::showTile()
 {
-    std::cout << "Tile [" << m_x << "][" << m_y << "]" << std::endl;
+    cout << *this;
+}
+
+ostream& operator<<(ostream& os, const Tile& t)
+{
+    os << "Tile [" << t.Tile::getX() << "][" << t.Tile::getY() << "]";
+    
+    return os;
 }
