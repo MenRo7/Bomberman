@@ -2,8 +2,10 @@
 #include "includes/map/Map.h"
 int main()
 {
-    Map board;
+    Map board(5, 10);
     
+    board.showMap();
+
 
     return 0;
 }

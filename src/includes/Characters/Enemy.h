@@ -11,8 +11,8 @@ class Enemy : public Character {
     public :
         //constructeurs
         Enemy();
-        Enemy(const Enemy& other) = delete;
-        Enemy(Enemy&& deplace) = delete;
+
+        //
         void showEnemy() const = 0;
         
     protected :

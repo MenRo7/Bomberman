@@ -11,8 +11,6 @@ class Character {
     public :
         //constructeurs
         Character(Tile& t);
-        Character(const Character& other) = delete;
-        Character(Character&& deplace) = delete;
 
         //déplacements
         void move(utils::Direction direction);

@@ -1,23 +1,22 @@
 #ifndef __MAP__
 #define __MAP__
 
-#include "../../includes/map/Tile.h"
-#include "../../includes/characters/Bomberman.h"
-#include "../../includes/items/Item.h"
-
 #include<iostream>
 #include<vector>
+
+#include "Tile.h"
+#include "../characters/Bomberman.h"
+#include "../items/Item.h"
 
 class Map {
 
     public :
         //constructeurs
-        Map(int lines, int columns);
-        Map(const Map& other) = delete;
-        Map(Map&& deplace) = delete;
+        Map();
+        Map(int lines = 5, int columns = 10);
 
         //affichage
-        //void showMap() const;
+        void showMap() const;
 
     private :
         int m_nbLines;

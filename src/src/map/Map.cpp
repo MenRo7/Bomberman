@@ -2,6 +2,11 @@
 
 using namespace std;
 
+Map::Map(): m_nbLines(5), m_nbColumns(10) 
+{
+    //
+}
+
 Map::Map(int lines, int columns) : m_nbLines(lines), m_nbColumns(columns)
 {
    for(int i = 0 ; i < m_nbLines ; i++)
@@ -16,8 +21,15 @@ Map::Map(int lines, int columns) : m_nbLines(lines), m_nbColumns(columns)
    }
 }
 
-/*void Map::showMap() const
+
+void Map::showMap() const
 {
-    for(const Tile& it : m_board){
-        it.Tile::showTile();
-}*/
+    for(int i = 0 ; i < m_nbLines ; i++)
+    {
+        for(int j = 0 ; j < m_nbColumns ; j++)
+        {
+            cout << m_board[i][j];
+        }
+        cout << endl;
+    }
+}

@@ -7,7 +7,7 @@ class Tile {
 
     public :
         //constructeurs
-        Tile(int x, int y); 
+        Tile(int x = 0, int y = 0);
 
         //getters
         int getX() const;
