@@ -2,11 +2,6 @@
 
 using namespace std;
 
-Map::Map(): m_nbLines(5), m_nbColumns(10) 
-{
-    //
-}
-
 Map::Map(int lines, int columns) : m_nbLines(lines), m_nbColumns(columns)
 {
    for(int i = 0 ; i < m_nbLines ; i++)
@@ -26,7 +21,7 @@ void Map::showMap() const
 {
     for(int k = 0 ; k < m_nbColumns ; k++)
     {
-        cout << " ____";
+        cout << " ___ ";
     }
     cout << endl;
 

@@ -27,7 +27,7 @@ class Map {
         std::vector<std::vector<Tile>> m_board;
         //Enemy* m_enemies[];
         //Item* m_items[];
-        //Bomberman m_player;
+        Bomberman m_player;
         //Tile* m_goal;
         
 };

@@ -34,7 +34,7 @@ void Tile::showTile()
 
 ostream& operator<<(ostream& os, const Tile& t)
 {
-    os << "|____";
+    os << "|___|";
 
     return os;
 }
