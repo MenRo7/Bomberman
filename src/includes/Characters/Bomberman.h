@@ -9,7 +9,7 @@ class Bomberman : public Character {
 
     public :
         // constructeurs
-        Bomberman();
+        Bomberman(Tile& t);
 
         // poser une bombe
         void putBomb();

@@ -11,12 +11,8 @@
 class Map {
 
     public :
-        // constructeurs
-        Map();
+        // constructeur
         Map(int lines = 5, int columns = 10);
-
-        // création Map
-        void createMap();
 
         // affichage Map
         void showMap() const;
@@ -27,8 +23,8 @@ class Map {
         std::vector<std::vector<Tile>> m_board;
         //Enemy* m_enemies[];
         //Item* m_items[];
-        Bomberman m_player;
-        //Tile* m_goal;
+        //Bomberman m_player;
+        //Tile m_goal;
         
 };
 

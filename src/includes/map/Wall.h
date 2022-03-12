@@ -1,14 +1,17 @@
 #ifndef __WALL__
 #define __WALL__
 
+#include "../../includes/map/Tile.h"
 #include<iostream>
 
-class Wall : Tile {
+class Wall : public Tile {
 
     public :
-        Wall();
+
     private :
 
 };
+
+//ostream& operator<<(ostream& os, const Wall& w);
 
 #endif

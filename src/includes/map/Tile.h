@@ -17,14 +17,9 @@ class Tile {
         void setX(int x);
         void setY(int y);
 
-        // affichage Tile
-        void showTile();
-
     protected :
         int m_x;
         int m_y;
 };
-
-std::ostream& operator<<(std::ostream& os, const Tile& t);
 
 #endif

@@ -27,14 +27,3 @@ void Tile::setY(int y)
     m_y = y;
 }
 
-void Tile::showTile()
-{
-    cout << *this;
-}
-
-ostream& operator<<(ostream& os, const Tile& t)
-{
-    os << "|___|";
-
-    return os;
-}
