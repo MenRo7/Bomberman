@@ -4,6 +4,7 @@
 #include<iostream>
 
 #include "../map/Tile.h"
+#include "../map/Position.h"
 #include "../utils/utils.h"
 
 
@@ -24,7 +25,7 @@ class Character {
         void setPosition(Position t);
 
         // déplacement
-        void move(utils::Direction direction);
+        bool move(utils::Direction direction);
 
         // affichage (virtuelle pure)
         virtual void showCharacter() const = 0;

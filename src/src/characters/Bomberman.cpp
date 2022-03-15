@@ -21,6 +21,6 @@ void Bomberman::getBomb(int bomb)
 
 void Bomberman::showCharacter() const 
 {
-    std::cout << " P";
+    std::cout << "  P  ";
 }
 

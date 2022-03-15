@@ -9,7 +9,7 @@ Ghost::~Ghost()
 
 }
 
-void Ghost::showEnemy() const
+void Ghost::showCharacter() const
 {
-	std::cout << " G ";
+	std::cout << "  G  ";
 }

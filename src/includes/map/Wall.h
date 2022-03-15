@@ -10,7 +10,7 @@ class Wall : public Tile {
 
     public :
         // constructeur
-        Wall(int x = 0, int y = 0, int health = 2, bool destroyable = true);
+        Wall(int x = 0, int y = 0, int health = 2, bool cross = false, bool destroyable = true);
         
         // affaiblissement
         void destroyWall();

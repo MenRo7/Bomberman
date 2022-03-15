@@ -1,6 +1,6 @@
 #include "../../includes/map/Tile.h"
 
-Tile::Tile(int x, int y) : m_position(x ,y)
+Tile::Tile(int x, int y, bool cross) : m_position(x ,y), m_cross(cross)
 {
     //
 }
@@ -12,5 +12,5 @@ Position Tile::getPosition() const
 
 void Tile::showStructure() const
 {
-    std::cout << "      ";
+    std::cout << "     ";
 }

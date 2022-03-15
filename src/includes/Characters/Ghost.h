@@ -15,7 +15,7 @@ class Ghost: public Enemy
 		~Ghost();
 
         // affichage Ghost
-		void showEnemy() const override;
+		void showCharacter() const override;
 };
 
 #endif

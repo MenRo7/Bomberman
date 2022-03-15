@@ -15,8 +15,10 @@ Character::Character(int x, int y, int health, int speed) : m_position(x, y), m_
 	}
 }
 
-void Character::move(Direction direction)
+bool Character::move(Direction direction)
 {
+    bool back = 1;
+
     switch(direction)
     {
         case Direction::TOP :
@@ -36,8 +38,10 @@ void Character::move(Direction direction)
             break;
 
         default:
+            back = 0;
             break;
     }
+    return back;
 }
 
 

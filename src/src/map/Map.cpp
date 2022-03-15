@@ -1,6 +1,7 @@
 #include "../../includes/map/Map.h"
 #include "../../includes/map/Wall.h"
 #include "../../includes/map/Position.h"
+#include "../../includes/characters/Ghost.h"
 
 using namespace std;
 
@@ -8,28 +9,38 @@ Map::Map(int lines, int columns) : m_nbLines(lines), m_nbColumns(columns)
 {
    for(int i = 0 ; i < m_nbLines ; i++)
    {
-       m_board.push_back(vector<Tile>(m_nbColumns));
+       m_board.push_back(vector<Tile*>(m_nbColumns));
 
        for(int j = 0 ; j < m_nbColumns ; j++)
        {
            if(i==0 && j==0)
            {
-               Wall w(i, j, 2, true);
-               m_board[i][j] = w;
+               /*Wall w(i, j, 2, true);
+               m_board[i][j] = w;*/
+                m_board[i][j] = new Wall(i , j, false, true, 2);
            }else
             {
-                Tile t(i ,j);
-                m_board[i][j] = t;
+                /*Tile t(i ,j);
+                m_board[i][j] = t;*/
+                m_board[i][j] = new Tile(i, j, true);
             }
        }
    }
-   m_player = Bomberman(2, 2, 1, 1, 1, 1);
-   m_goal = Tile(7, 7);
-   //m_enemies.push_back();
+   m_player = Bomberman(1, 1, 1, 1, 1, 1);
+   m_goal = Tile(7, 7, false);
+   m_enemies.push_back(new Ghost(0, 1, 1, 1, 2));
 }
 
 Map::~Map()
 {
+    for(int i=0; i<m_nbLines; i++)
+	{
+		for(int j=0; j<m_nbColumns; j++)
+		{
+			delete m_board[i][j];
+		}
+	}
+
     for(int i = 0 ; i < m_enemies.size() ; i++)
     {
         delete m_enemies[i];
@@ -41,6 +52,15 @@ Map::~Map()
     }
 }
 
+int Map::getLines() const
+{
+    return m_nbLines;
+}
+
+int Map::getColumns() const
+{
+    return m_nbColumns;
+}
 
 void Map::showMap() const
 {
@@ -48,7 +68,7 @@ void Map::showMap() const
     {
         for(int j = 0 ; j < m_nbColumns ; j++)
         {
-            cout << "+------";
+            cout << "+-----";
         }
         cout << "+" << endl;
     
@@ -59,21 +79,39 @@ void Map::showMap() const
                 switch(k)
                 {
                     case 0:
-                        cout << "|      ";
-                    break;
+                        cout << "|     ";
+                        break;
 
                     case 1:
+                    {
+                        bool show = false;
                         cout << "|";
 
-                        if(m_player.getPosition() == m_board[i][j].getPosition())
+                        if(m_player.getPosition() == m_board[i][j]->getPosition())
                         {
                             m_player.showCharacter();
+                            show = true;
                         }
 
-                        if(!m_enemies.empty())
+                        if(!m_enemies.empty() && !show)
                         {
                             int idx = 0;
-                            while(idx < m_enemies.size() && m_items[idx]->getPosition() != m_board[i][j].getPosition())
+                            while(idx < m_enemies.size() && m_enemies[idx]->getPosition() != m_board[i][j]->getPosition())
+                            {
+                                idx++;
+                            }
+
+                            if(idx < m_enemies.size())
+                            {
+                                m_enemies[idx]->showCharacter();
+                                show = true;
+                            }
+                        }
+
+                        if(!m_items.empty() && !show)
+                        {
+                            int idx = 0;
+                            while(idx < m_items.size() && m_items[idx]->getPosition() != m_board[i][j]->getPosition())
                             {
                                 idx++;
                             }
@@ -81,21 +119,24 @@ void Map::showMap() const
                             if(idx < m_items.size())
                             {
                                 m_items[idx]->showItems();
+                                show = true;
                             }
                         }
-                        else
+
+                        if(!show)
                         {
-                            m_board[i][j].showStructure();
+                            m_board[i][j]->showStructure();
                         }
-                    break;
+                        break;
+                    }
 
                     case 2:
-                        cout << "|      ";
-                    break;
+                        cout << "|     ";
+                        break;
 
                     default:
-                        cout << "|      ";
-                    break;
+                        cout << "|     ";
+                        break;
                 }
             }
             cout << "|" << endl;
@@ -103,7 +144,12 @@ void Map::showMap() const
     }
     for(int j = 0 ; j < m_nbColumns ; j++)
     {
-        cout << "+------";
+        cout << "+-----";
     }
     cout << "+" << endl;
+}
+
+bool Map::moveCharacter(utils::Direction direction)
+{
+    return m_player.move(direction);
 }

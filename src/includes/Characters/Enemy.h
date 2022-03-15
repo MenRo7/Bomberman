@@ -4,8 +4,6 @@
 #include<iostream>
 
 #include "Character.h"
-#include "../map/Tile.h"
-
 
 class Enemy : public Character {
 
@@ -15,9 +13,6 @@ class Enemy : public Character {
 
         // destructeur 
         ~Enemy();
-        
-        // affichage 
-        virtual void showEnemy() const = 0;
         
     protected :
         int m_damage;

@@ -1,15 +1,15 @@
 #include "../../includes/map/Wall.h"
 
-Wall::Wall(int x, int y, int health, bool destroyable) : Tile(x, y), m_health(health), m_destroyable(true)
+Wall::Wall(int x, int y, int health, bool cross, bool destroyable) : Tile(x, y, cross), m_health(health), m_destroyable(true)
 {
-    if(x < 1 || x > 7)
+    if(x < 0 || x > 7)
     {
-        x = 1;
+        x = 0;
     }
 
-     if(y < 1 || y > 7)
+     if(y < 0 || y > 7)
     {
-        y = 1;
+        y = 0;
     }
 
     if(health < 1)
@@ -29,5 +29,5 @@ void Wall::destroyWall()
 
 void Wall::showStructure() const
 {
-    std::cout << " W ";
+    std::cout << "  W  ";
 }

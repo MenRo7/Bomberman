@@ -10,7 +10,7 @@ class Tile {
 
     public :
         // constructeur
-        Tile(int x = 0, int y = 0);
+        Tile(int x = 0, int y = 0, bool cross = true);
 
         // getters
         Position getPosition() const;
@@ -21,6 +21,7 @@ class Tile {
 
     protected :
         Position m_position;
+        bool m_cross;
 
 };
 
