@@ -48,7 +48,7 @@ void Map::showMap() const
     {
         for(int j = 0 ; j < m_nbColumns ; j++)
         {
-            cout << "+-----";
+            cout << "+------";
         }
         cout << "+" << endl;
     
@@ -59,7 +59,7 @@ void Map::showMap() const
                 switch(k)
                 {
                     case 0:
-                        cout << "|     ";
+                        cout << "|      ";
                     break;
 
                     case 1:
@@ -90,11 +90,11 @@ void Map::showMap() const
                     break;
 
                     case 2:
-                        cout << "|     ";
+                        cout << "|      ";
                     break;
 
                     default:
-                        cout << "|     ";
+                        cout << "|      ";
                     break;
                 }
             }
@@ -103,7 +103,7 @@ void Map::showMap() const
     }
     for(int j = 0 ; j < m_nbColumns ; j++)
     {
-        cout << "+-----";
+        cout << "+------";
     }
     cout << "+" << endl;
 }
