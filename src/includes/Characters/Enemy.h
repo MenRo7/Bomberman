@@ -3,8 +3,8 @@
 
 #include<iostream>
 
-#include "../../includes/characters/Character.h"
-#include "../../includes/map/Tile.h"
+#include "Character.h"
+#include "../map/Tile.h"
 
 
 class Enemy : public Character {
@@ -13,6 +13,9 @@ class Enemy : public Character {
         // constructeur
         Enemy(int x, int y, int health, int speed, int damage);
 
+        // destructeur 
+        ~Enemy();
+        
         // affichage 
         virtual void showEnemy() const = 0;
         

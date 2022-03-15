@@ -3,8 +3,8 @@
 
 #include<iostream>
 
-#include "../../includes/map/Tile.h"
-#include "../../includes/utils/utils.h"
+#include "../map/Tile.h"
+#include "../utils/utils.h"
 
 
 class Character {

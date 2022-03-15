@@ -3,7 +3,7 @@
 
 #include<iostream>
 
-#include "../../includes/characters/Character.h"
+#include "Character.h"
 
 class Bomberman : public Character {
 
