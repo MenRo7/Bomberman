@@ -1,23 +1,23 @@
 #ifndef __ENEMY__
 #define __ENEMY__
 
+#include<iostream>
+
 #include "../../includes/characters/Character.h"
 #include "../../includes/map/Tile.h"
 
-#include<iostream>
 
 class Enemy : public Character {
 
     public :
-        // constructeurs
-        Enemy();
+        // constructeur
+        Enemy(int x, int y, int health, int speed, int damage);
 
         // affichage 
-        void showEnemy() const = 0;
+        virtual void showEnemy() const = 0;
         
     protected :
-        int m_damage();
-        Tile* m_position;
+        int m_damage;
 };
 
 #endif

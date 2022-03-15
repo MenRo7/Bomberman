@@ -1,29 +1,16 @@
 #include "../../includes/map/Tile.h"
 
-using namespace std;
-
-Tile::Tile(int x, int y) : m_x(x), m_y(y)
+Tile::Tile(int x, int y) : m_position(x ,y)
 {
     //
 }
 
-int Tile::getX() const
+Position Tile::getPosition() const
 {
-    return m_x;
+    return m_position;
 }
 
-int Tile::getY() const
+void Tile::showStructure() const
 {
-    return m_y;
+    std::cout << "    ";
 }
-
-void Tile::setX(int x)
-{
-    m_x = x;
-}
-
-void Tile::setY(int y)
-{
-    m_y = y;
-}
-

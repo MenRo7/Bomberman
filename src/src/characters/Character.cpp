@@ -2,15 +2,21 @@
 
 using namespace utils;
 
-Character::Character(Tile& t) : m_health(100), m_speed(1), m_position(0)
+Character::Character(int x, int y, int health, int speed) : m_position(x, y), m_health(health), m_speed(speed)
 {
-    m_position = t(0,0);
+    if(health < 1 || health > 1)
+	{
+		health = 1;
+	}
+	
+	if(speed < 1)
+	{
+		speed = 1;
+	}
 }
 
-bool Character::move(Direction direction)
+void Character::move(Direction direction)
 {
-    bool back = 1;
-
     switch(direction)
     {
         case Direction::TOP :
@@ -30,13 +36,10 @@ bool Character::move(Direction direction)
             break;
 
         default:
-            back = 0;
             break;
     }
+}
 
-    return back;
-}
-}
 
 int Character::getHealth() const
 {
@@ -48,7 +51,7 @@ int Character::getSpeed() const
     return m_speed;
 }
 
-Tile Character::getPosition() const
+Position Character::getPosition() const
 {
     return m_position;
 }
@@ -63,8 +66,8 @@ void Character::setSpeed(int s)
     m_speed = s;
 }
 
-void Character::setPosition(Tile& t)
+void Character::setPosition(Position t)
 {
-    m_position = &t;
+    m_position = t;
 }
 

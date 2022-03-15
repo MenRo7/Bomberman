@@ -1,37 +1,38 @@
 #ifndef __CHARACTER__
 #define __CHARACTER__
 
+#include<iostream>
+
 #include "../../includes/map/Tile.h"
 #include "../../includes/utils/utils.h"
 
-#include<iostream>
 
 class Character {
 
     public :
-        // constructeurs
-        Character(Tile& t);
-
-        // déplacements
-        void move(utils::Direction direction);
+        // constructeur
+        Character(int x = 0, int y = 0, int health = 1, int speed = 1);
 
         // getters
         int getHealth() const;
         int getSpeed() const;
-        Tile getPosition() const;
+        Position getPosition() const;
 
         // setters
         void setHealth(int h);
         void setSpeed(int s);
-        void setPosition(Tile t);
+        void setPosition(Position t);
+
+        // déplacement
+        void move(utils::Direction direction);
 
         // affichage (virtuelle pure)
-        virtual void show() const = 0;
+        virtual void showCharacter() const = 0;
         
     protected :
         int m_health;
         int m_speed;
-        Tile* m_position; 
+        Position m_position; 
 
 };
 

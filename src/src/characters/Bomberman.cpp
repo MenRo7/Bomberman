@@ -1,11 +1,26 @@
 #include "../../includes/characters/Bomberman.h"
 
-Bomberman::Bomberman(Tile& t) : Character(&t), m_nbBomb(3), m_bombMax(1)
+
+Bomberman::Bomberman(int x, int y, int health, int speed, int bomb, int bombMax) : Character(x, y, health, speed), m_nbBomb(1), m_bombMax(1)
 {
     //
 }
 
-void Bomberman::show() const override
+void Bomberman::putBomb()
 {
-    cout << *this;
+    m_nbBomb--;
 }
+
+void Bomberman::getBomb(int bomb)
+{
+    if(bomb > 0)
+    {
+        m_nbBomb += bomb;
+    }
+}
+
+void Bomberman::showCharacter() const 
+{
+    std::cout << " Player ";
+}
+

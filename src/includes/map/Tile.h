@@ -3,23 +3,25 @@
 
 #include<iostream>
 
+#include "Position.h"
+
+
 class Tile {
 
     public :
-        // constructeurs
+        // constructeur
         Tile(int x = 0, int y = 0);
 
         // getters
-        int getX() const;
-        int getY() const;
+        Position getPosition() const;
 
-        // setters
-        void setX(int x);
-        void setY(int y);
+        //affichage Tile
+        virtual void showStructure() const;
+
 
     protected :
-        int m_x;
-        int m_y;
+        Position m_position;
+
 };
 
 #endif
