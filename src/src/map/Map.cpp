@@ -13,20 +13,16 @@ Map::Map(int lines, int columns) : m_nbLines(lines), m_nbColumns(columns)
 
        for(int j = 0 ; j < m_nbColumns ; j++)
        {
-           if(i%2 && j%2)
+           if(i==0 && j==0)
            {
-               /*Wall w(i, j, 2, true);
-               m_board[i][j] = w;*/
                 m_board[i][j] = new Wall(i , j, false, true, 2);
            }else
             {
-                /*Tile t(i ,j);
-                m_board[i][j] = t;*/
                 m_board[i][j] = new Tile(i, j, true);
             }
        }
    }
-   m_player = Bomberman(0, 0, 1, 1, 1, 1);
+   m_player = Bomberman(2, 2, 1, 1, 1, 1);
    m_goal = Tile(7, 7, false);
    m_enemies.push_back(new Ghost(0, 1, 1, 1, 2));
 }
