@@ -11,5 +11,5 @@ Ghost::~Ghost()
 
 void Ghost::showCharacter() const
 {
-	std::cout << "  G  ";
+	std::cout << "   G   ";
 }

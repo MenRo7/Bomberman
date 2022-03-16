@@ -13,7 +13,7 @@ Map::Map(int lines, int columns) : m_nbLines(lines), m_nbColumns(columns)
 
        for(int j = 0 ; j < m_nbColumns ; j++)
        {
-           if(i==0 && j==0)
+           if(i%2 && j%2)
            {
                /*Wall w(i, j, 2, true);
                m_board[i][j] = w;*/
@@ -26,7 +26,7 @@ Map::Map(int lines, int columns) : m_nbLines(lines), m_nbColumns(columns)
             }
        }
    }
-   m_player = Bomberman(1, 1, 1, 1, 1, 1);
+   m_player = Bomberman(0, 0, 1, 1, 1, 1);
    m_goal = Tile(7, 7, false);
    m_enemies.push_back(new Ghost(0, 1, 1, 1, 2));
 }
@@ -68,18 +68,18 @@ void Map::showMap() const
     {
         for(int j = 0 ; j < m_nbColumns ; j++)
         {
-            cout << "+-----";
+            cout << "+-------";
         }
         cout << "+" << endl;
     
-        for(int k = 0 ; k < 3 ; k++)
+        for(int k = 0 ; k < 4 ; k++)
         {
             for(int j = 0 ; j < m_nbColumns ; j++)
             {
                 switch(k)
                 {
                     case 0:
-                        cout << "|     ";
+                        cout << "|       ";
                         break;
 
                     case 1:
@@ -131,11 +131,11 @@ void Map::showMap() const
                     }
 
                     case 2:
-                        cout << "|     ";
+                        cout << "|       ";
                         break;
 
                     default:
-                        cout << "|     ";
+                        cout << "|       ";
                         break;
                 }
             }
@@ -144,7 +144,7 @@ void Map::showMap() const
     }
     for(int j = 0 ; j < m_nbColumns ; j++)
     {
-        cout << "+-----";
+        cout << "+-------";
     }
     cout << "+" << endl;
 }

@@ -12,5 +12,5 @@ Position Tile::getPosition() const
 
 void Tile::showStructure() const
 {
-    std::cout << "     ";
+    std::cout << "       ";
 }

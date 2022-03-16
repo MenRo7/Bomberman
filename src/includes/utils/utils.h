@@ -4,8 +4,8 @@
 namespace utils {
 
     enum Direction {
-        TOP, 
-        BOTTOM, 
+        UP, 
+        DOWN, 
         LEFT, 
         RIGHT, 
         STAY

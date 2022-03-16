@@ -4,33 +4,41 @@
 #include <iostream>
 #include <typeinfo>
 
+using namespace std;
+using namespace utils;
+
 int main(void)
 {
+	cout << endl;
+
+	cout << endl << "                                                 BOMBERMAN" << endl;
+
+	cout << endl;
+
 	int nbColumn, nbLine;
 
-	std::cout << "Saisir le nombre de ligne de la map :";
-	std::cin >> nbLine;
-	std::cout << "Saisir le nombre de colonne de la map :";
-	std::cin >> nbColumn;
+	cout << "Saisir le nombre de ligne de la map :";
+	cin >> nbLine;
+	cout << "Saisir le nombre de colonne de la map :";
+	cin >> nbColumn;
 
 	Map map(nbLine, nbColumn);
 
-	std::cout << std::endl;
+	cout << endl;
 
-	std::cout << "Map line: " << map.getLines() << " | column: " << map.getColumns() << std::endl;
+	cout << "Map line: " << map.getLines() << " | column: " << map.getColumns() << endl;
 
-	std::cout << std::endl << std::endl;
+	cout << std::endl << endl;
 
 	map.showMap();
 	
-	std::cout << std::endl << "Déplacement du bomberman vers la droite" << std::endl << std::endl;
-	map.moveCharacter(utils::Direction::RIGHT);
+	cout << endl << "Déplacement du bomberman vers la droite" << endl << endl;
+	map.moveCharacter(Direction::RIGHT);
 
     map.showMap();
 
-    
-    std::cout << std::endl << "Déplacement du bomberman vers le bas" << std::endl << std::endl;
-    map.moveCharacter(utils::Direction::BOTTOM);
+    cout << std::endl << "Déplacement du bomberman vers le bas" << endl << endl;
+    map.moveCharacter(Direction::DOWN);
     
 
 	map.showMap();

@@ -21,11 +21,11 @@ bool Character::move(Direction direction)
 
     switch(direction)
     {
-        case Direction::TOP :
+        case Direction::UP :
             m_position.setX(m_position.getX()-m_speed);
             break;
 
-        case Direction::BOTTOM :
+        case Direction::DOWN :
             m_position.setX(m_position.getX()+m_speed);
             break;
 
@@ -36,7 +36,11 @@ bool Character::move(Direction direction)
         case Direction::RIGHT :
             m_position.setY(m_position.getY()+m_speed);
             break;
-
+        
+        case Direction::STAY :
+            m_position.setX(m_position.getX()+0);
+            m_position.setY(m_position.getY()+0);
+            
         default:
             back = 0;
             break;
