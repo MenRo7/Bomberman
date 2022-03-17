@@ -15,10 +15,8 @@ Character::Character(int x, int y, int health, int speed) : m_position(x, y), m_
 	}
 }
 
-bool Character::move(Direction direction)
+/*void Character::move(Direction direction)
 {
-    bool back = 1;
-
     switch(direction)
     {
         case Direction::UP :
@@ -36,18 +34,34 @@ bool Character::move(Direction direction)
         case Direction::RIGHT :
             m_position.setY(m_position.getY()+m_speed);
             break;
-        
-        case Direction::STAY :
+          
+        default:
             m_position.setX(m_position.getX()+0);
             m_position.setY(m_position.getY()+0);
-            
-        default:
-            back = 0;
             break;
     }
-    return back;
+}
+*/
+
+void Character::moveUp()
+{
+    m_position.setX(m_position.getX()-m_speed);
 }
 
+void Character::moveDown()
+{
+    m_position.setX(m_position.getX()+m_speed);
+}
+
+void Character::moveLeft()
+{
+    m_position.setY(m_position.getY()-m_speed);
+}
+
+void Character::moveRight()
+{
+     m_position.setY(m_position.getY()+m_speed);
+}
 
 int Character::getHealth() const
 {

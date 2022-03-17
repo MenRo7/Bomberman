@@ -25,7 +25,10 @@ class Character {
         void setPosition(Position t);
 
         // déplacement
-        bool move(utils::Direction direction);
+        void moveUp();
+        void moveDown();
+        void moveLeft();
+        void moveRight();
 
         // affichage (virtuelle pure)
         virtual void showCharacter() const = 0;

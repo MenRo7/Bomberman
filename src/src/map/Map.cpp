@@ -2,10 +2,12 @@
 #include "../../includes/map/Wall.h"
 #include "../../includes/map/Position.h"
 #include "../../includes/characters/Ghost.h"
+#include "../../includes/items/Item.h"
 
 using namespace std;
+using namespace utils;
 
-Map::Map(int lines, int columns) : m_nbLines(lines), m_nbColumns(columns)
+Map::Map(int nblines, int nbcolumns) : m_nbLines(nblines), m_nbColumns(nbcolumns)
 {
    for(int i = 0 ; i < m_nbLines ; i++)
    {
@@ -13,7 +15,7 @@ Map::Map(int lines, int columns) : m_nbLines(lines), m_nbColumns(columns)
 
        for(int j = 0 ; j < m_nbColumns ; j++)
        {
-           if(i==0 && j==0)
+           if(i%2 && j%2)
            {
                 m_board[i][j] = new Wall(i , j, false, true, 2);
            }else
@@ -145,7 +147,29 @@ void Map::showMap() const
     cout << "+" << endl;
 }
 
-bool Map::moveCharacter(utils::Direction direction)
+void Map::moveCharacter(int direction)
 {
-    return m_player.move(direction);
+    if(direction==8)
+    {
+        m_player.moveUp();
+    }else
+        {
+            if(direction==2)
+            {
+                m_player.moveDown();
+            }else
+                {
+                    if(direction==4)
+                    {
+                        m_player.moveLeft();
+                    }else
+                        if(direction==6)
+                        {
+                            m_player.moveRight();
+                        }else
+                            {
+                                cout << "ERROR" << endl;
+                            }
+                }
+        }
 }

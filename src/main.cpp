@@ -31,7 +31,7 @@ Map mapEditor()
 
 void PlayerTurn(Map& map)
 {
-	int choice;
+	int direction;
 
 	cout << endl << "C'est votre tour : Choisissez votre déplacement : " << endl;
 	cout << endl;
@@ -44,8 +44,11 @@ void PlayerTurn(Map& map)
 	cout << endl << "6 pour aller vers la droite" << endl;
 	cout << endl;
 
-	cin >> choice;
+	cin >> direction;
 
+	map.moveCharacter(direction);
+	map.showMap();
+/*
 	if(choice==8)
 	{
 		cout << endl << "Déplacement vers le haut" << endl;
@@ -79,18 +82,20 @@ void PlayerTurn(Map& map)
 				}else
 					{
 						cout << endl << "ERREUR !" << endl;
+						map.showMap();
 					}
 				}
 			}
 		}
-
+*/
 }
+
 
 int main(void)
 {
 	cout << endl;
 
-	cout << endl << "                                                 BOMBERMAN" << endl;
+	cout << endl << "\t\t\tBOMBERMAN" << endl;
 
 	cout << endl;
 

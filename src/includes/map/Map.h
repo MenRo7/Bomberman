@@ -14,7 +14,7 @@ class Map {
 
     public :
         // constructeur
-        Map(int lines = 5, int columns = 10);
+        Map(int nblines = 5, int nbcolumns = 10);
 
         // destructeur
         ~Map();
@@ -27,7 +27,7 @@ class Map {
         void showMap() const;
 
         // mouvement Character sur Map
-        bool moveCharacter(utils::Direction direction);
+        void moveCharacter(int direction);
 
     private :
         int m_nbLines;
