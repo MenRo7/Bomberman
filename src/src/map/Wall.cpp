@@ -29,5 +29,5 @@ void Wall::destroyWall()
 
 void Wall::showStructure() const
 {
-    std::cout << "   W   ";
+    std::cout << " WALL  ";
 }

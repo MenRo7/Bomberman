@@ -24,7 +24,7 @@ Map::Map(int nblines, int nbcolumns) : m_nbLines(nblines), m_nbColumns(nbcolumns
             }
        }
    }
-   m_player = Bomberman(2, 2, 1, 1, 1, 1);
+   m_bomberman = Bomberman(2, 2, 1, 1, 1, 1);
    m_goal = Tile(7, 7, false);
    m_enemies.push_back(new Ghost(0, 1, 1, 1, 2));
 }
@@ -85,9 +85,9 @@ void Map::showMap() const
                         bool show = false;
                         cout << "|";
 
-                        if(m_player.getPosition() == m_board[i][j]->getPosition())
+                        if(m_bomberman.getPosition() == m_board[i][j]->getPosition())
                         {
-                            m_player.showCharacter();
+                            m_bomberman.showCharacter();
                             show = true;
                         }
 
@@ -151,21 +151,21 @@ void Map::moveCharacter(int direction)
 {
     if(direction==8)
     {
-        m_player.moveUp();
+        m_bomberman.moveUp();
     }else
         {
             if(direction==2)
             {
-                m_player.moveDown();
+                m_bomberman.moveDown();
             }else
                 {
                     if(direction==4)
                     {
-                        m_player.moveLeft();
+                        m_bomberman.moveLeft();
                     }else
                         if(direction==6)
                         {
-                            m_player.moveRight();
+                            m_bomberman.moveRight();
                         }else
                             {
                                 cout << "ERROR" << endl;

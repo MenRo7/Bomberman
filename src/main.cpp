@@ -2,10 +2,8 @@
 #include "includes/map/Wall.h"
 
 #include <iostream>
-#include <typeinfo>
 
 using namespace std;
-using namespace utils;
 
 Map mapEditor()
 {
@@ -29,7 +27,7 @@ Map mapEditor()
 	return map;
 }
 
-void PlayerTurn(Map& map)
+void playerTurn(Map& map)
 {
 	int direction;
 
@@ -48,46 +46,6 @@ void PlayerTurn(Map& map)
 
 	map.moveCharacter(direction);
 	map.showMap();
-/*
-	if(choice==8)
-	{
-		cout << endl << "Déplacement vers le haut" << endl;
-		cout << endl;
-		map.moveCharacter(Direction::UP);
-		map.showMap();
-	}else
-		{
-		if(choice==2)
-		{
-			cout << endl << "Déplacement vers le bas" << endl;
-			cout << endl;
-			map.moveCharacter(Direction::DOWN);
-			map.showMap();
-		}else
-			{
-			if(choice==4)
-			{
-				cout << endl << "Déplacement vers la gauche" << endl;
-				cout << endl;
-				map.moveCharacter(Direction::LEFT);
-				map.showMap();
-			}else
-				{
-				if(choice==6)
-				{
-					cout << endl << "Déplacement vers la droite" << endl;
-					cout << endl;
-					map.moveCharacter(Direction::RIGHT);
-					map.showMap();
-				}else
-					{
-						cout << endl << "ERREUR !" << endl;
-						map.showMap();
-					}
-				}
-			}
-		}
-*/
 }
 
 
@@ -95,13 +53,14 @@ int main(void)
 {
 	cout << endl;
 
-	cout << endl << "\t\t\tBOMBERMAN" << endl;
+	cout << endl << "\t\t\t\t\t\t\tBOMBERMAN" << endl;
+	cout << endl <<  "\t\t\t\t\t Le remake biensur faut pas deconner" << endl;
 
 	cout << endl;
 
 	Map map = mapEditor();
 
-	PlayerTurn(map);
+	playerTurn(map);
 	
 	return 0;
 }

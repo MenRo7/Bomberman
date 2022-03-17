@@ -1,7 +1,5 @@
 #include "../../includes/characters/Character.h"
 
-using namespace utils;
-
 Character::Character(int x, int y, int health, int speed) : m_position(x, y), m_health(health), m_speed(speed)
 {
     if(health < 1 || health > 1)
