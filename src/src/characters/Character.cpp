@@ -1,5 +1,7 @@
 #include "../../includes/characters/Character.h"
 
+using namespace std;
+
 Character::Character(int x, int y, int health, int speed) : m_position(x, y), m_health(health), m_speed(speed)
 {
     if(health < 1 || health > 1)
@@ -43,22 +45,50 @@ Character::Character(int x, int y, int health, int speed) : m_position(x, y), m_
 
 void Character::moveUp()
 {
-    m_position.setX(m_position.getX()-m_speed);
+    if(m_position.getX()>0)
+    {
+        m_position.setX(m_position.getX()-m_speed);
+    }else
+        {
+            cout << "ERREUR DE DEPLACEMENT" << endl;
+            cout << endl;
+        }
 }
 
 void Character::moveDown()
 {
-    m_position.setX(m_position.getX()+m_speed);
+    if(m_position.getX()<4)
+    {
+        m_position.setX(m_position.getX()+m_speed);
+    }else
+        {
+            cout << "ERREUR DE DEPLACEMENT" << endl;
+            cout << endl;
+        }
 }
 
 void Character::moveLeft()
 {
-    m_position.setY(m_position.getY()-m_speed);
+    if(m_position.getY()>0)
+    {
+        m_position.setY(m_position.getY()-m_speed);
+    }else
+        {
+            cout << "ERREUR DE DEPLACEMENT" << endl;
+            cout << endl;
+        }
 }
 
 void Character::moveRight()
 {
-     m_position.setY(m_position.getY()+m_speed);
+    if(m_position.getY()<7)
+    {
+        m_position.setY(m_position.getY()+m_speed);
+    }else
+        {
+            cout << "ERREUR DE DEPLACEMENT" << endl;
+            cout << endl;
+        }
 }
 
 int Character::getHealth() const

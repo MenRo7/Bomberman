@@ -14,7 +14,7 @@ class Map {
 
     public :
         // constructeur
-        Map(int nblines = 5, int nbcolumns = 10);
+        Map(int nbLines = 8, int nbColumns = 5);
 
         // destructeur
         ~Map();
