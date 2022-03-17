@@ -15,34 +15,6 @@ Character::Character(int x, int y, int health, int speed) : m_position(x, y), m_
 	}
 }
 
-/*void Character::move(Direction direction)
-{
-    switch(direction)
-    {
-        case Direction::UP :
-            m_position.setX(m_position.getX()-m_speed);
-            break;
-
-        case Direction::DOWN :
-            m_position.setX(m_position.getX()+m_speed);
-            break;
-
-        case Direction::LEFT :
-            m_position.setY(m_position.getY()-m_speed);
-            break;
-
-        case Direction::RIGHT :
-            m_position.setY(m_position.getY()+m_speed);
-            break;
-          
-        default:
-            m_position.setX(m_position.getX()+0);
-            m_position.setY(m_position.getY()+0);
-            break;
-    }
-}
-*/
-
 void Character::moveUp()
 {
     if(m_position.getX()>0)
