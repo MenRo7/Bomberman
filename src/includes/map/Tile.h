@@ -14,6 +14,7 @@ class Tile {
 
         // getters
         Position getPosition() const;
+        bool getCross() const;
 
         //affichage Tile
         virtual void showStructure() const;

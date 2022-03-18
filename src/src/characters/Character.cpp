@@ -88,8 +88,4 @@ void Character::setSpeed(int s)
     m_speed = s;
 }
 
-void Character::setPosition(Position t)
-{
-    m_position = t;
-}
 

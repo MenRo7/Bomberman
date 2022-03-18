@@ -149,27 +149,30 @@ void Map::showMap() const
 
 void Map::moveCharacter(int direction)
 {
-    if(direction==8)
+    if(direction==8 /*&& m_board[(m_bomberman.getPosition().getX())-1][m_bomberman.getPosition().getY()]->getCross()==true*/)
     {
         m_bomberman.moveUp();
     }else
         {
-            if(direction==2)
+            if(direction==2 /*&& m_board[(m_bomberman.getPosition().getX())+1][m_bomberman.getPosition().getY()]->getCross()==true*/)
             {
                 m_bomberman.moveDown();
             }else
                 {
-                    if(direction==4)
+                    if(direction==4 /*&& m_board[m_bomberman.getPosition().getX()][(m_bomberman.getPosition().getY())-1]->getCross()==true*/)
                     {
                         m_bomberman.moveLeft();
                     }else
-                        if(direction==6)
                         {
-                            m_bomberman.moveRight();
-                        }else
+                            if(direction==6 /*&& m_board[m_bomberman.getPosition().getX()][(m_bomberman.getPosition().getY())+1]->getCross()==true*/)
                             {
-                                cout << "ERROR" << endl;
-                            }
+                                m_bomberman.moveRight();
+                            }else
+                                {
+                                    cout << "ERROR" << endl;
+                                }
+                        }
                 }
         }
 }
+        

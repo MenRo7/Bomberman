@@ -10,6 +10,11 @@ Position Tile::getPosition() const
     return m_position;
 }
 
+bool Tile::getCross() const
+{
+    return m_cross;
+}
+
 void Tile::showStructure() const
 {
     std::cout << "       ";

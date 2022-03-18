@@ -22,7 +22,6 @@ class Character {
         // setters
         void setHealth(int h);
         void setSpeed(int s);
-        void setPosition(Position t);
 
         // déplacement
         void moveUp();
