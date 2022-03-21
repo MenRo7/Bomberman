@@ -38,7 +38,7 @@ void playerTurn(Map& map)
 		cout << endl;
 
 		cin >> direction;
-		cout << endl;
+		cout << endl << endl << endl << endl;
 
 		map.moveCharacter(direction);
 		map.showMap();	
@@ -51,7 +51,7 @@ void enemyTurn()
 }
 
 
-int main(void)
+int main()
 {
 	 cout << endl;
 

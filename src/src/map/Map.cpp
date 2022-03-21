@@ -24,8 +24,8 @@ Map::Map(int nblines, int nbcolumns) : m_nbLines(nblines), m_nbColumns(nbcolumns
             }
        }
    }
-   m_bomberman = Bomberman(2, 2, 1, 1, 1, 1);
-   m_goal = Tile(7, 7, false);
+   m_bomberman = Bomberman(0, 0, 1, 1, 1, 1);
+   Tile m_goal(7, 7, false);
    m_enemies.push_back(new Ghost(0, 1, 1, 1, 2));
 }
 
@@ -169,7 +169,7 @@ void Map::moveCharacter(int direction)
                                 m_bomberman.moveRight();
                             }else
                                 {
-                                    cout << "ERROR" << endl;
+                                    cout << "ERREUR DE TOUCHE" << endl;
                                 }
                         }
                 }

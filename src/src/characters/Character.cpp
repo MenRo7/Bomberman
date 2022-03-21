@@ -22,7 +22,7 @@ void Character::moveUp()
         m_position.setX(m_position.getX()-m_speed);
     }else
         {
-            cout << "ERREUR DE DEPLACEMENT" << endl;
+            cout << "VOUS NE POUVEZ PAS MONTER PLUS" << endl;
             cout << endl;
         }
 }
@@ -34,7 +34,7 @@ void Character::moveDown()
         m_position.setX(m_position.getX()+m_speed);
     }else
         {
-            cout << "ERREUR DE DEPLACEMENT" << endl;
+            cout << "VOUS NE POUVEZ DESCENDRE PLUS" << endl;
             cout << endl;
         }
 }
@@ -46,7 +46,7 @@ void Character::moveLeft()
         m_position.setY(m_position.getY()-m_speed);
     }else
         {
-            cout << "ERREUR DE DEPLACEMENT" << endl;
+            cout << "VOUS NE POUVEZ PAS ALLER PLUS A GAUCHE" << endl;
             cout << endl;
         }
 }
@@ -58,7 +58,7 @@ void Character::moveRight()
         m_position.setY(m_position.getY()+m_speed);
     }else
         {
-            cout << "ERREUR DE DEPLACEMENT" << endl;
+            cout << "VOUS NE POUVEZ PAS ALLER PLUS A DROITE" << endl;
             cout << endl;
         }
 }
