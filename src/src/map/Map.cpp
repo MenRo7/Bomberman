@@ -149,43 +149,43 @@ void Map::showMap() const
 
 void Map::moveCharacter(int direction)
 {
-    if(direction==8 /*&& m_board[(m_bomberman.getPosition().getX())-1][m_bomberman.getPosition().getY()]->getCross()==true*/)
+    if(direction==8)
     {
         m_bomberman.moveUp();
         if(m_bomberman.getPosition()==m_board[2][2]->getPosition())
         {
             m_bomberman.moveDown();
-            cout << "FCKING WALL MY MAN" << endl;
+            cout << "MUR AU DESSUS" << endl;
         }
     }else
         {
-            if(direction==2 /*&& m_board[(m_bomberman.getPosition().getX())+1][m_bomberman.getPosition().getY()]->getCross()==true*/)
+            if(direction==2)
             {
                 m_bomberman.moveDown();
                 if(m_bomberman.getPosition()==m_board[2][2]->getPosition())
                 {
                     m_bomberman.moveUp();
-                    cout << "FCKING WALL MY MAN" << endl;
+                    cout << "MUR EN DESSOUS" << endl;
                 }
             }else
                 {
-                    if(direction==4 /*&& m_board[m_bomberman.getPosition().getX()][(m_bomberman.getPosition().getY())-1]->getCross()==true*/)
+                    if(direction==4)
                     {
                         m_bomberman.moveLeft();
                         if(m_bomberman.getPosition()==m_board[2][2]->getPosition())
                         {
                             m_bomberman.moveRight();
-                            cout << "FCKING WALL MY MAN" << endl;
+                            cout << "MUR A GAUCHE" << endl;
                         }
                     }else
                         {
-                            if(direction==6 /*&& m_board[m_bomberman.getPosition().getX()][(m_bomberman.getPosition().getY())+1]->getCross()==true*/)
+                            if(direction==6)
                             {
                                 m_bomberman.moveRight();
                                 if(m_bomberman.getPosition()==m_board[2][2]->getPosition())
                                 {
                                     m_bomberman.moveLeft();
-                                    cout << "FCKING WALL MY MAN" << endl;
+                                    cout << "MUR A DROITE" << endl;
                                 }
                             }else
                                 {
