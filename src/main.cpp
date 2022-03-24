@@ -53,7 +53,9 @@ void enemyTurn()
 
 int main()
 {
-	 cout << endl;
+
+	
+	cout << endl;
 
 	cout << endl << "\t\t\t\t\t\t\tBOMBERMAN" << endl;
 	cout << endl <<  "\t\t\t\t\t Le remake biensur faut pas deconner" << endl;
@@ -61,6 +63,6 @@ int main()
 	Map map = mapEditor();
 
 	playerTurn(map);
-
+	
 	return 0;
 }

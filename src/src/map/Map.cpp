@@ -15,9 +15,9 @@ Map::Map(int nblines, int nbcolumns) : m_nbLines(nblines), m_nbColumns(nbcolumns
 
        for(int j = 0 ; j < m_nbColumns ; j++)
        {
-           if(i%2 && j%2)
+           if(i==2 && j==2)
            {
-                m_board[i][j] = new Wall(i , j, false, true, 2);
+                m_board[i][j] = new Wall(i , j, 2, false, true);
            }else
             {
                 m_board[i][j] = new Tile(i, j, true);
@@ -152,21 +152,41 @@ void Map::moveCharacter(int direction)
     if(direction==8 /*&& m_board[(m_bomberman.getPosition().getX())-1][m_bomberman.getPosition().getY()]->getCross()==true*/)
     {
         m_bomberman.moveUp();
+        if(m_bomberman.getPosition()==m_board[2][2]->getPosition())
+        {
+            m_bomberman.moveDown();
+            cout << "FCKING WALL MY MAN" << endl;
+        }
     }else
         {
             if(direction==2 /*&& m_board[(m_bomberman.getPosition().getX())+1][m_bomberman.getPosition().getY()]->getCross()==true*/)
             {
                 m_bomberman.moveDown();
+                if(m_bomberman.getPosition()==m_board[2][2]->getPosition())
+                {
+                    m_bomberman.moveUp();
+                    cout << "FCKING WALL MY MAN" << endl;
+                }
             }else
                 {
                     if(direction==4 /*&& m_board[m_bomberman.getPosition().getX()][(m_bomberman.getPosition().getY())-1]->getCross()==true*/)
                     {
                         m_bomberman.moveLeft();
+                        if(m_bomberman.getPosition()==m_board[2][2]->getPosition())
+                        {
+                            m_bomberman.moveRight();
+                            cout << "FCKING WALL MY MAN" << endl;
+                        }
                     }else
                         {
                             if(direction==6 /*&& m_board[m_bomberman.getPosition().getX()][(m_bomberman.getPosition().getY())+1]->getCross()==true*/)
                             {
                                 m_bomberman.moveRight();
+                                if(m_bomberman.getPosition()==m_board[2][2]->getPosition())
+                                {
+                                    m_bomberman.moveLeft();
+                                    cout << "FCKING WALL MY MAN" << endl;
+                                }
                             }else
                                 {
                                     cout << "ERREUR DE TOUCHE" << endl;
@@ -175,4 +195,3 @@ void Map::moveCharacter(int direction)
                 }
         }
 }
-        
