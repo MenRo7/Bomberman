@@ -19,14 +19,39 @@ Map::Map(int nblines, int nbcolumns) : m_nbLines(nblines), m_nbColumns(nbcolumns
            {
                 m_board[i][j] = new Wall(i , j, 2, false, true);
            }else
-            {
-                m_board[i][j] = new Tile(i, j, true);
-            }
+                if(i==1 && j==3)
+                {
+                    m_board[i][j] = new Wall(i , j, 2, false, true);
+                }else
+                    if(i==3 && j==5)
+                    {
+                        m_board[i][j] = new Wall(i , j, 2, false, true);
+                    }else
+                        if(i==3 && j==6)
+                        {
+                            m_board[i][j] = new Wall(i , j, 2, false, true);
+                        }else
+                            if(i==0 && j==4)
+                            {
+                                m_board[i][j] = new Wall(i , j, 2, false, true);
+                            }else
+                                if(i==4 && j==3)
+                                {
+                                    m_board[i][j] = new Wall(i , j, 2, false, true);
+                                }else
+                                    if(i==4 && j==4)
+                                    {
+                                        m_board[i][j] = new Wall(i , j, 2, false, true);
+                                    }else
+                                        {
+                                            m_board[i][j] = new Tile(i, j, true);
+                                        }
        }
    }
    m_bomberman = Bomberman(0, 0, 1, 1, 1, 1);
    Tile m_goal(7, 7, false);
-   m_enemies.push_back(new Ghost(0, 1, 1, 1, 2));
+   m_enemies.push_back(new Ghost(2, 7, 1, 1, 2));
+   m_enemies.push_back(new Ghost(2, 4, 1, 1, 2));
 }
 
 Map::~Map()
@@ -148,11 +173,11 @@ void Map::showMap() const
 }
 
 void Map::moveCharacter(int direction)
-{
+{   
     if(direction==8)
     {
         m_bomberman.moveUp();
-        if(m_bomberman.getPosition()==m_board[2][2]->getPosition())
+        if(m_bomberman.getPosition()==m_board[2][2]->getPosition() || m_bomberman.getPosition()==m_board[1][3]->getPosition() || m_bomberman.getPosition()==m_board[3][5]->getPosition() || m_bomberman.getPosition()==m_board[3][6]->getPosition() || m_bomberman.getPosition()==m_board[0][4]->getPosition() || m_bomberman.getPosition()==m_board[4][3]->getPosition() || m_bomberman.getPosition()==m_board[4][4]->getPosition())
         {
             m_bomberman.moveDown();
             cout << "MUR AU DESSUS" << endl;
@@ -162,7 +187,7 @@ void Map::moveCharacter(int direction)
             if(direction==2)
             {
                 m_bomberman.moveDown();
-                if(m_bomberman.getPosition()==m_board[2][2]->getPosition())
+                if(m_bomberman.getPosition()==m_board[2][2]->getPosition() || m_bomberman.getPosition()==m_board[1][3]->getPosition() || m_bomberman.getPosition()==m_board[3][5]->getPosition() || m_bomberman.getPosition()==m_board[3][6]->getPosition() || m_bomberman.getPosition()==m_board[0][4]->getPosition() || m_bomberman.getPosition()==m_board[4][3]->getPosition() || m_bomberman.getPosition()==m_board[4][4]->getPosition())
                 {
                     m_bomberman.moveUp();
                     cout << "MUR EN DESSOUS" << endl;
@@ -172,7 +197,7 @@ void Map::moveCharacter(int direction)
                     if(direction==4)
                     {
                         m_bomberman.moveLeft();
-                        if(m_bomberman.getPosition()==m_board[2][2]->getPosition())
+                        if(m_bomberman.getPosition()==m_board[2][2]->getPosition() || m_bomberman.getPosition()==m_board[1][3]->getPosition() || m_bomberman.getPosition()==m_board[3][5]->getPosition() || m_bomberman.getPosition()==m_board[3][6]->getPosition() || m_bomberman.getPosition()==m_board[0][4]->getPosition() || m_bomberman.getPosition()==m_board[4][3]->getPosition() || m_bomberman.getPosition()==m_board[4][4]->getPosition())
                         {
                             m_bomberman.moveRight();
                             cout << "MUR A GAUCHE" << endl;
@@ -182,7 +207,7 @@ void Map::moveCharacter(int direction)
                             if(direction==6)
                             {
                                 m_bomberman.moveRight();
-                                if(m_bomberman.getPosition()==m_board[2][2]->getPosition())
+                                if(m_bomberman.getPosition()==m_board[2][2]->getPosition() || m_bomberman.getPosition()==m_board[1][3]->getPosition() || m_bomberman.getPosition()==m_board[3][5]->getPosition() || m_bomberman.getPosition()==m_board[3][6]->getPosition() || m_bomberman.getPosition()==m_board[0][4]->getPosition() || m_bomberman.getPosition()==m_board[4][3]->getPosition() || m_bomberman.getPosition()==m_board[4][4]->getPosition())
                                 {
                                     m_bomberman.moveLeft();
                                     cout << "MUR A DROITE" << endl;
@@ -195,3 +220,4 @@ void Map::moveCharacter(int direction)
                 }
         }
 }
+

@@ -3,6 +3,7 @@
 
 #include<iostream>
 #include<vector>
+#include<stdlib.h>
 
 #include "Tile.h"
 #include "Wall.h"

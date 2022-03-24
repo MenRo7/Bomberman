@@ -11,8 +11,6 @@ Map mapEditor()
 
 	cout << endl;
 
-	cout << "Map line: " << map.getLines() << " | column: " << map.getColumns() << endl;
-
 	cout << endl << endl;
 
 	map.showMap();
@@ -56,9 +54,12 @@ int main()
 
 	
 	cout << endl;
-
-	cout << endl << "\t\t\t\t\t\t\tBOMBERMAN" << endl;
-	cout << endl <<  "\t\t\t\t\t Le remake biensur faut pas deconner" << endl;
+	cout << endl << "\t\t\t\t  ---------------------" << endl;
+	cout << endl << "\t\t\t\t |                     |" << endl;
+	cout << endl << "\t\t\t\t |  BOMBERMAN Evolved  |" << endl;
+	cout << endl << "\t\t\t\t |                     |" << endl;
+	cout << endl << "\t\t\t\t  ---------------------" << endl;
+	cout << endl <<  "\t\t\t\tLe remake faut pas blaguer" << endl;
 
 	Map map = mapEditor();
 
