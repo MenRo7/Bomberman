@@ -24,10 +24,7 @@ class Character {
         void setSpeed(int s);
 
         // déplacement
-        void moveUp();
-        void moveDown();
-        void moveLeft();
-        void moveRight();
+        bool move(int direction);
 
         // affichage (virtuelle pure)
         virtual void showCharacter() const = 0;

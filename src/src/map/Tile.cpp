@@ -15,6 +15,11 @@ bool Tile::getCross() const
     return m_cross;
 }
 
+void Tile::setCross(bool c)
+{
+    m_cross = c;
+}
+
 void Tile::showStructure() const
 {
     std::cout << "       ";

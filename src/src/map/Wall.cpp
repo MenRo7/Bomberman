@@ -1,6 +1,6 @@
 #include "../../includes/map/Wall.h"
 
-Wall::Wall(int x, int y, bool cross, int health, bool destroyable) : Tile(x, y, cross), m_health(health), m_destroyable(true)
+Wall::Wall(int x, int y, bool cross, int health, bool destroyable) : Tile(x, y, cross), m_health(health), m_destroyable(destroyable)
 {
     if(x < 0 || x > 4)
     {

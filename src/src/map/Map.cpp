@@ -3,6 +3,7 @@
 #include "../../includes/map/Position.h"
 #include "../../includes/characters/Ghost.h"
 #include "../../includes/items/Item.h"
+#include "../../includes/exceptions/BombermanException.h"
 
 using namespace std;
 using namespace utils;
@@ -15,37 +16,13 @@ Map::Map(int nblines, int nbcolumns) : m_nbLines(nblines), m_nbColumns(nbcolumns
 
        for(int j = 0 ; j < m_nbColumns ; j++)
        {
-           if(i==2 && j==2)
+           if(i%2 && j%2)
            {
-                m_board[i][j] = new Wall(i , j, 2, false, true);
-           }else
-                if(i==1 && j==3)
+                m_board[i][j] = new Wall(i, j, false, 2, true);
+             }else
                 {
-                    m_board[i][j] = new Wall(i , j, 2, false, true);
-                }else
-                    if(i==3 && j==5)
-                    {
-                        m_board[i][j] = new Wall(i , j, 2, false, true);
-                    }else
-                        if(i==3 && j==6)
-                        {
-                            m_board[i][j] = new Wall(i , j, 2, false, true);
-                        }else
-                            if(i==0 && j==4)
-                            {
-                                m_board[i][j] = new Wall(i , j, 2, false, true);
-                            }else
-                                if(i==4 && j==3)
-                                {
-                                    m_board[i][j] = new Wall(i , j, 2, false, true);
-                                }else
-                                    if(i==4 && j==4)
-                                    {
-                                        m_board[i][j] = new Wall(i , j, 2, false, true);
-                                    }else
-                                        {
-                                            m_board[i][j] = new Tile(i, j, true);
-                                        }
+                    m_board[i][j] = new Tile(i, j, true);
+                }
        }
    }
    m_bomberman = Bomberman(0, 0, 1, 1, 1, 1);
@@ -174,50 +151,28 @@ void Map::showMap() const
 
 void Map::moveCharacter(int direction)
 {   
-    if(direction==8)
+    Bomberman cloneBomberman = m_bomberman;
+    cloneBomberman.move(direction);
+    
+    if(cloneBomberman.getPosition().getX() >= m_nbLines || cloneBomberman.getPosition().getX() < 0  || cloneBomberman.getPosition().getY() >= m_nbColumns || cloneBomberman.getPosition().getY() < 0)
     {
-        m_bomberman.moveUp();
-        if(m_bomberman.getPosition()==m_board[2][2]->getPosition() || m_bomberman.getPosition()==m_board[1][3]->getPosition() || m_bomberman.getPosition()==m_board[3][5]->getPosition() || m_bomberman.getPosition()==m_board[3][6]->getPosition() || m_bomberman.getPosition()==m_board[0][4]->getPosition() || m_bomberman.getPosition()==m_board[4][3]->getPosition() || m_bomberman.getPosition()==m_board[4][4]->getPosition())
-        {
-            m_bomberman.moveDown();
-            cout << "MUR AU DESSUS" << endl;
-        }
+        throw BombermanException("impossible de sortir de la Map\n");
+    }
+
+    if(!m_board[cloneBomberman.getPosition().getX()][cloneBomberman.getPosition().getY()]->getCross())
+    {
+        throw BombermanException("un mur sur votre route\n");
+    }
+
+    cloneBomberman = m_bomberman;
+
+    if(m_bomberman.move(direction))
+    {
+        m_board[cloneBomberman.getPosition().getX()][cloneBomberman.getPosition().getY()]->setCross(true);
+		m_board[m_bomberman.getPosition().getX()][m_bomberman.getPosition().getY()]->setCross(false);
     }else
         {
-            if(direction==2)
-            {
-                m_bomberman.moveDown();
-                if(m_bomberman.getPosition()==m_board[2][2]->getPosition() || m_bomberman.getPosition()==m_board[1][3]->getPosition() || m_bomberman.getPosition()==m_board[3][5]->getPosition() || m_bomberman.getPosition()==m_board[3][6]->getPosition() || m_bomberman.getPosition()==m_board[0][4]->getPosition() || m_bomberman.getPosition()==m_board[4][3]->getPosition() || m_bomberman.getPosition()==m_board[4][4]->getPosition())
-                {
-                    m_bomberman.moveUp();
-                    cout << "MUR EN DESSOUS" << endl;
-                }
-            }else
-                {
-                    if(direction==4)
-                    {
-                        m_bomberman.moveLeft();
-                        if(m_bomberman.getPosition()==m_board[2][2]->getPosition() || m_bomberman.getPosition()==m_board[1][3]->getPosition() || m_bomberman.getPosition()==m_board[3][5]->getPosition() || m_bomberman.getPosition()==m_board[3][6]->getPosition() || m_bomberman.getPosition()==m_board[0][4]->getPosition() || m_bomberman.getPosition()==m_board[4][3]->getPosition() || m_bomberman.getPosition()==m_board[4][4]->getPosition())
-                        {
-                            m_bomberman.moveRight();
-                            cout << "MUR A GAUCHE" << endl;
-                        }
-                    }else
-                        {
-                            if(direction==6)
-                            {
-                                m_bomberman.moveRight();
-                                if(m_bomberman.getPosition()==m_board[2][2]->getPosition() || m_bomberman.getPosition()==m_board[1][3]->getPosition() || m_bomberman.getPosition()==m_board[3][5]->getPosition() || m_bomberman.getPosition()==m_board[3][6]->getPosition() || m_bomberman.getPosition()==m_board[0][4]->getPosition() || m_bomberman.getPosition()==m_board[4][3]->getPosition() || m_bomberman.getPosition()==m_board[4][4]->getPosition())
-                                {
-                                    m_bomberman.moveLeft();
-                                    cout << "MUR A DROITE" << endl;
-                                }
-                            }else
-                                {
-                                    cout << "ERREUR DE TOUCHE" << endl;
-                                }
-                        }
-                }
+            throw BombermanException("Impossible de se deplacer\n");
         }
 }
 
