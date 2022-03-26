@@ -1,5 +1,6 @@
 #include "includes/map/Map.h"
 #include "includes/map/Wall.h"
+
 #include "includes/exceptions/BombermanException.h"
 
 #include <iostream>
@@ -8,7 +9,7 @@ using namespace std;
 
 Map mapEditor()
 {
-	Map map(5, 8);
+	Map map(1);
 
 	cout << endl;
 
@@ -37,7 +38,7 @@ void playerTurn(Map& map)
 		cout << endl;
 
 		cin >> direction;
-		cout << endl << endl << endl << endl;
+		cout << endl << endl << endl;
 
 		try
 		{
@@ -67,7 +68,7 @@ int main()
 	cout << endl << "\t\t\t\t |  BOMBERMAN Evolved  |" << endl;
 	cout << endl << "\t\t\t\t |                     |" << endl;
 	cout << endl << "\t\t\t\t  ---------------------" << endl;
-	cout << endl <<  "\t\t\t\tLe remake faut pas blaguer" << endl;
+	cout << endl <<  "\t\t\t\tLe remake faut pas blaguer" << endl << endl;
 
 	Map map = mapEditor();
 

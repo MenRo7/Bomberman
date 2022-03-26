@@ -2,17 +2,9 @@
 
 using namespace std;
 
-Character::Character(int x, int y, int health, int speed) : m_position(x, y), m_health(health), m_speed(speed)
+Character::Character(int x, int y, int health, int speed) : m_position(x, y), m_health(1), m_speed(1)
 {
-    if(health < 1 || health > 1)
-	{
-		health = 1;
-	}
-	
-	if(speed < 1)
-	{
-		speed = 1;
-	}
+   //
 }
 
 bool Character::move(int direction)

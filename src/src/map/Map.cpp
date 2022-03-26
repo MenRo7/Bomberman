@@ -1,34 +1,95 @@
 #include "../../includes/map/Map.h"
 #include "../../includes/map/Wall.h"
 #include "../../includes/map/Position.h"
+
 #include "../../includes/characters/Ghost.h"
+
 #include "../../includes/items/Item.h"
+
 #include "../../includes/exceptions/BombermanException.h"
 
 using namespace std;
 using namespace utils;
 
-Map::Map(int nblines, int nbcolumns) : m_nbLines(nblines), m_nbColumns(nbcolumns)
+Map::Map(int mapid)
 {
-   for(int i = 0 ; i < m_nbLines ; i++)
-   {
-       m_board.push_back(vector<Tile*>(m_nbColumns));
+    fstream fMap;
+    string line;
+    string tile;
+    int i;
+    
+    int lMap = 0;
+    int cMap = 0;
 
-       for(int j = 0 ; j < m_nbColumns ; j++)
-       {
-           if(i%2 && j%2)
-           {
-                m_board[i][j] = new Wall(i, j, false, 2, true);
-             }else
+    cout << "MAP LOADING.." << endl << endl;
+
+    if(!m_board.empty())
+    {
+        for(int i =0 ; i < m_nbLines ; i++)
+        {
+            for(int j = 0 ; j < m_nbColumns ; j++)
+            {
+                delete m_board[i][j];
+            }
+        }
+    }
+    fMap.open("res/" + to_string(mapid) + ".txt", fstream::in);
+
+    if(fMap.is_open())
+    {
+        fMap >> m_nbLines;
+        fMap >> m_nbColumns;
+
+        for(int i = 0 ; i < m_nbLines ; i++)
+        {
+            m_board.push_back(vector<Tile*>(m_nbColumns));
+        }
+
+        getline(fMap, line);
+        while(getline(fMap, line))
+        {
+            cMap = 0;
+            i = 0;
+
+            while(i<line.length())
+            {
+                if(line[i] != ',')
                 {
-                    m_board[i][j] = new Tile(i, j, true);
+                    tile = "";
+                    while(line[i] != ',' && i<line.length())
+                    {
+                        tile += line[i];
+                        i++;
+                    }
+                    if(tile.compare("P") == 0)
+                    {
+                        m_board[lMap][cMap] = new Tile(lMap, cMap, false);
+                        m_bomberman = Bomberman(lMap, cMap, 1, 1, 1, 1);
+                    }else
+                        if(tile.compare("W") == 0)
+                        {
+                            m_board[lMap][cMap] = new Wall(lMap, cMap, false, 2, true);
+                        }else
+                            if(tile.compare("X") == 0)
+                            {
+                                m_goal = Tile(lMap, cMap, true);
+                                m_board[lMap][cMap] = new Tile(lMap, cMap, true);
+                            }else
+                                {
+                                    m_board[lMap][cMap] = new Tile(lMap, cMap, true);
+                                }
+                                cMap++;
                 }
-       }
-   }
-   m_bomberman = Bomberman(0, 0, 1, 1, 1, 1);
-   Tile m_goal(7, 7, false);
-   m_enemies.push_back(new Ghost(2, 7, 1, 1, 2));
-   m_enemies.push_back(new Ghost(2, 4, 1, 1, 2));
+                i++;
+            }
+            lMap++;
+        }
+    }else
+        {
+            cout << endl << "Impossible de charger la map! surement qu'elle existe pas chacal" << endl << endl;
+        }
+        fMap.close();
+        cout <<"MAP LOADED" << endl << endl;
 }
 
 Map::~Map()
@@ -68,7 +129,7 @@ void Map::showMap() const
     {
         for(int j = 0 ; j < m_nbColumns ; j++)
         {
-            cout << "+-------";
+            cout << "+--------";
         }
         cout << "+" << endl;
     
@@ -79,7 +140,7 @@ void Map::showMap() const
                 switch(k)
                 {
                     case 0:
-                        cout << "|       ";
+                        cout << "|        ";
                         break;
 
                     case 1:
@@ -131,11 +192,11 @@ void Map::showMap() const
                     }
 
                     case 2:
-                        cout << "|       ";
+                        cout << "|        ";
                         break;
 
                     default:
-                        cout << "|       ";
+                        cout << "|        ";
                         break;
                 }
             }
@@ -144,7 +205,7 @@ void Map::showMap() const
     }
     for(int j = 0 ; j < m_nbColumns ; j++)
     {
-        cout << "+-------";
+        cout << "+--------";
     }
     cout << "+" << endl;
 }
@@ -152,16 +213,17 @@ void Map::showMap() const
 void Map::moveCharacter(int direction)
 {   
     Bomberman cloneBomberman = m_bomberman;
+
     cloneBomberman.move(direction);
     
     if(cloneBomberman.getPosition().getX() >= m_nbLines || cloneBomberman.getPosition().getX() < 0  || cloneBomberman.getPosition().getY() >= m_nbColumns || cloneBomberman.getPosition().getY() < 0)
     {
-        throw BombermanException("impossible de sortir de la Map\n");
+        throw BombermanException("impossible de sortir de la Map !\n");
     }
 
     if(!m_board[cloneBomberman.getPosition().getX()][cloneBomberman.getPosition().getY()]->getCross())
     {
-        throw BombermanException("un mur sur votre route\n");
+        throw BombermanException("Un mur sur votre route ! Contournez-le !\n");
     }
 
     cloneBomberman = m_bomberman;

@@ -5,7 +5,7 @@ class Position
 {		
 	public:
         //constructeur
-		Position(int x = 0, int y = 0);
+		Position(int x, int y);
 
         // getters
 		int getX() const;

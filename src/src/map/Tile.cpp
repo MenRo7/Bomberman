@@ -22,5 +22,5 @@ void Tile::setCross(bool c)
 
 void Tile::showStructure() const
 {
-    std::cout << "       ";
+    std::cout << "        ";
 }

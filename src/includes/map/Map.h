@@ -2,20 +2,24 @@
 #define __MAP__
 
 #include<iostream>
+#include<fstream>
 #include<vector>
 #include<stdlib.h>
 
 #include "Tile.h"
 #include "Wall.h"
+
 #include "../characters/Bomberman.h"
-#include "../items/Item.h"
 #include "../characters/Enemy.h"
+
+#include "../items/Item.h"
+
 
 class Map {
 
     public :
         // constructeur
-        Map(int nbLines = 5, int nbColumns = 8);
+        Map(int mapid);
 
         // destructeur
         ~Map();
