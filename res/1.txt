@@ -1,7 +1,9 @@
-6 8
-P,t,t,t,W,t,W,t 
-W,W,t,t,t,W,W,t 
-W,ML,t,t,W,W,t,t 
- t,W,W,t,t,W,t,t 
-W,W,t,t,t,t,t,X
-W,W,t,W,W,t,t,W
+8 10
+P,t,t,t,MB,t,W,t,PW,t 
+t,t,W,W,W,t,t,t,W,W,t 
+W,t,W,ML,t,t,W,W,t,t 
+W,t,t,W,W,t,t,W,t,t 
+PW,t,W,W,t,SC,t,SU,t,X
+W,MB,t,W,t,W,W,t,t,W
+W,W,W,W,W,W,W,W,W,W
+t,MB,t,SC,t,SU,t,PW,t,ML

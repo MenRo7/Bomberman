@@ -30,10 +30,11 @@ void rules()
 void playerTurn(Map& map)
 {
 	int direction;
+	int turn = 1;
 
 	while(1)
 	{
-		cout << endl << "C'est votre tour !" << endl;
+		cout << endl << "Tour " << turn << endl;
 		cout << endl << "Choisissez votre déplacement : " << endl;
 		cout << endl;
 		cout << endl << "==8 pour aller vers le haut==" << endl;
@@ -56,7 +57,8 @@ void playerTurn(Map& map)
 			cerr << e.what() << endl;
 		}
 		
-		map.showMap();	
+		map.showMap(); 	
+		turn++;
 	}
 }
 
@@ -64,7 +66,6 @@ void enemyTurn()
 {
 
 }
-
 
 int main()
 {
@@ -100,11 +101,6 @@ int main()
 			cout << endl << "3--Quitter" << endl;
 			cout << endl;
 			cin>>choice;
-			if(choice == 1)
-			{
-				Map map = mapEditor(1);
-				playerTurn(map);
-			}
 		}else
 			if(choice == 3)
 			{

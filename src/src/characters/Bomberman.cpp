@@ -1,27 +1,47 @@
 #include "../../includes/characters/Bomberman.h"
 
 
-Bomberman::Bomberman(int x, int y, int health, int speed, int bomb, int bombMax) : Character(x, y, health, speed), m_nbBomb(1), m_bombMax(1)
+Bomberman::Bomberman(int x, int y, int health, int speed, int bomb) : Character(x, y, health, speed), m_bomb(1)
 {
     //
 }
 
-void Bomberman::putBomb()
+/*void Bomberman::putBomb()
 {
-    m_nbBomb--;
+    if(m_Bomb >= 1)
+    {
+
+    }
+    m_bomb--;
+}*/
+
+int Bomberman::getBomb() const
+{
+    return m_bomb;
 }
 
-void Bomberman::getBomb(int bomb)
+void Bomberman::PickUpBomb(int b)
 {
-    if(bomb > 0)
+    if(b > 0)
     {
-        m_nbBomb += bomb;
+        m_bomb += b;
     }
 }
 
 void Bomberman::addHealth(int h)
 {
-    m_health+=h;
+    if(h > 0)
+    {
+        m_health += h;
+    }
+}
+
+void Bomberman::augmentSpeed(int sp)
+{
+    if(sp > 0)
+    {
+        m_speed += sp;
+    }
 }
 
 void Bomberman::showCharacter() const 

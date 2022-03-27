@@ -6,6 +6,10 @@
 
 #include "../../includes/items/Item.h"
 #include "../../includes/items/MoreLife.h"
+#include "../../includes/items/SpeedUp.h"
+#include "../../includes/items/MoreBomb.h"
+#include "../../includes/items/ScaleUp.h"
+#include "../../includes/items/PowerUp.h"
 
 #include "../../includes/exceptions/BombermanException.h"
 
@@ -55,7 +59,7 @@ Map::Map(int mapid)
                     if(tile.compare("P") == 0)
                     {
                         m_board[lMap][cMap] = new Tile(lMap, cMap, false);
-                        m_bomberman = Bomberman(lMap, cMap, 1, 1, 1, 1);
+                        m_bomberman = Bomberman(lMap, cMap, 1, 1, 1);
                     }else
                         if(tile.compare("W") == 0)
                         {
@@ -71,14 +75,30 @@ Map::Map(int mapid)
                                     m_board[lMap][cMap] = new Tile(lMap, cMap, true);
                                     m_items.push_back(new MoreLife(lMap, cMap));
                                 }else
-                                    /*if(tile.compare("SU") == 0)
-                                    {
-
-                                    }*/
+                                    if(tile.compare("SU") == 0)
                                     {
                                         m_board[lMap][cMap] = new Tile(lMap, cMap, true);
-                                    }
-                                    cMap++;
+                                        m_items.push_back(new SpeedUp(lMap, cMap));
+                                    }else
+                                        if(tile.compare("MB") == 0)
+                                        {
+                                            m_board[lMap][cMap] = new Tile(lMap, cMap, true);
+                                            m_items.push_back(new MoreBomb(lMap, cMap));
+                                        }else
+                                            if(tile.compare("SC") == 0)
+                                            {
+                                                m_board[lMap][cMap] = new Tile(lMap, cMap, true);
+                                                m_items.push_back(new ScaleUp(lMap, cMap));
+                                            }else
+                                                if(tile.compare("PW") == 0)
+                                                {
+                                                    m_board[lMap][cMap] = new Tile(lMap, cMap, true);
+                                                    m_items.push_back(new PowerUp(lMap, cMap));
+                                                }else
+                                                    {
+                                                        m_board[lMap][cMap] = new Tile(lMap, cMap, true);
+                                                    }
+                                                    cMap++;
                 }
                 i++;
             }
@@ -125,6 +145,9 @@ int Map::getColumns() const
 
 void Map::showMap() const
 {
+    cout << endl << "============================================================================" << endl;
+    cout << endl << "\tPoints de vie : " << m_bomberman.getHealth() << "\t\t\t" << "Nombre de bombes : " << m_bomberman.getBomb() << endl << endl;
+    cout << "============================================================================" << endl;
     for(int i = 0 ; i < m_nbLines ; i++)
     {
         for(int j = 0 ; j < m_nbColumns ; j++)
@@ -190,10 +213,7 @@ void Map::showMap() const
                         }
                         break;
                     }
-                    /*case 2:
-                        cout << "|        ";
-                        break;
-*/
+ 
                     default:
                         cout << "|        ";
                         break;

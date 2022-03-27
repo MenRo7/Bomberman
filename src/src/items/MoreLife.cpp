@@ -5,7 +5,7 @@ MoreLife::MoreLife(int x, int y, int life) : Item(x, y), m_moreLife(life)
     //
 }
 
-void MoreLife::riseHealth(Bomberman& player)
+void MoreLife::augmentHealth(Bomberman& player)
 {
     player.addHealth(m_moreLife);
 }

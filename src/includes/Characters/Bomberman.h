@@ -9,23 +9,27 @@ class Bomberman : public Character {
 
     public :
         // constructeur
-        Bomberman(int x = 0, int y = 0, int health = 1, int speed = 1, int bomb = 1, int bombMax = 1);
+        Bomberman(int x = 0, int y = 0, int health = 1, int speed = 1, int bomb = 1);
+
+        int getBomb() const;
 
         // poser une bombe
-        void putBomb();
+        //void putBomb();
 
         // augmenter bombes max
-        void getBomb(int bomb);
+        void PickUpBomb(int b);
 
         // augmenter les pv
         void addHealth(int h);
+
+        //augmenter la vitesse
+        void augmentSpeed(int sp);
 
         // affichage Bomberman
         void showCharacter() const override;
         
     private :
-        int m_nbBomb;
-        int m_bombMax;
+        int m_bomb;
 }; 
 
 #endif
