@@ -24,17 +24,6 @@ Map::Map(int mapid)
 
     cout << "MAP LOADING.." << endl << endl;
 
-    /*if(!m_board.empty())
-    {
-        for(int i =0 ; i < m_nbLines ; i++)
-        {
-            for(int j = 0 ; j < m_nbColumns ; j++)
-            {
-                delete m_board[i][j];
-            }
-        }
-    }*/
-
     fMap.open("res/" + to_string(mapid) + ".txt", fstream::in);
 
     if(fMap.is_open())
