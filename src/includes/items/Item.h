@@ -12,7 +12,8 @@ class Item
 		~Item();
 
 		Position getPosition() const;
-		virtual void showItems() const = 0;
+
+		virtual void showItem() const = 0;
 
 	protected:
 		Position m_position;

@@ -100,6 +100,11 @@ int main()
 			cout << endl << "3--Quitter" << endl;
 			cout << endl;
 			cin>>choice;
+			if(choice == 1)
+			{
+				Map map = mapEditor(1);
+				playerTurn(map);
+			}
 		}else
 			if(choice == 3)
 			{

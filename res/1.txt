@@ -1,7 +1,7 @@
 6 8
-P,t,t,W,t,W,t,t
-W,W,t,t,t,W,W,t
-t,t,t,t,t,W,W,t
-t,W,W,t,t,W,t,t
+P,t,t,t,W,t,W,t 
+W,W,t,t,t,W,W,t 
+W,ML,t,t,W,W,t,t 
+ t,W,W,t,t,W,t,t 
 W,W,t,t,t,t,t,X
-W,W,W,W,W,W,W,W
+W,W,t,W,W,t,t,W

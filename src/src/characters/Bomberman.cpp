@@ -19,6 +19,11 @@ void Bomberman::getBomb(int bomb)
     }
 }
 
+void Bomberman::addHealth(int h)
+{
+    m_health+=h;
+}
+
 void Bomberman::showCharacter() const 
 {
     std::cout << " PLAYER ";

@@ -5,6 +5,7 @@
 #include "../../includes/characters/Ghost.h"
 
 #include "../../includes/items/Item.h"
+#include "../../includes/items/MoreLife.h"
 
 #include "../../includes/exceptions/BombermanException.h"
 
@@ -23,7 +24,7 @@ Map::Map(int mapid)
 
     cout << "MAP LOADING.." << endl << endl;
 
-    if(!m_board.empty())
+    /*if(!m_board.empty())
     {
         for(int i =0 ; i < m_nbLines ; i++)
         {
@@ -32,7 +33,8 @@ Map::Map(int mapid)
                 delete m_board[i][j];
             }
         }
-    }
+    }*/
+
     fMap.open("res/" + to_string(mapid) + ".txt", fstream::in);
 
     if(fMap.is_open())
@@ -75,10 +77,19 @@ Map::Map(int mapid)
                                 m_goal = Tile(lMap, cMap, true);
                                 m_board[lMap][cMap] = new Tile(lMap, cMap, true);
                             }else
+                                if(tile.compare("ML") == 0)
                                 {
                                     m_board[lMap][cMap] = new Tile(lMap, cMap, true);
-                                }
-                                cMap++;
+                                    m_items.push_back(new MoreLife(lMap, cMap));
+                                }else
+                                    /*if(tile.compare("SU") == 0)
+                                    {
+
+                                    }*/
+                                    {
+                                        m_board[lMap][cMap] = new Tile(lMap, cMap, true);
+                                    }
+                                    cMap++;
                 }
                 i++;
             }
@@ -89,7 +100,7 @@ Map::Map(int mapid)
             cout << endl << "Impossible de charger la map! surement qu'elle existe pas chacal" << endl << endl;
         }
         fMap.close();
-        cout <<"MAP LOADED" << endl << endl;
+        cout << endl <<"MAP LOADED" << endl << endl;
 }
 
 Map::~Map()
@@ -145,16 +156,31 @@ void Map::showMap() const
 
                     case 1:
                     {
-                        bool show = false;
+                        bool display = false;
                         cout << "|";
 
                         if(m_bomberman.getPosition() == m_board[i][j]->getPosition())
                         {
                             m_bomberman.showCharacter();
-                            show = true;
+                            display = true;
                         }
 
-                        if(!m_enemies.empty() && !show)
+                        if(!display && !m_items.empty())
+                        {
+                            int idx = 0;
+                            while(idx < m_items.size() && m_items[idx]->getPosition() != m_board[i][j]->getPosition())
+                            {
+                                idx++;
+                            }
+
+                            if(idx < m_items.size())
+                            {
+                                m_items[idx]->showItem();
+                                display= true;
+                            }
+                        }
+
+                        if(!display && !m_enemies.empty())
                         {
                             int idx = 0;
                             while(idx < m_enemies.size() && m_enemies[idx]->getPosition() != m_board[i][j]->getPosition())
@@ -165,36 +191,20 @@ void Map::showMap() const
                             if(idx < m_enemies.size())
                             {
                                 m_enemies[idx]->showCharacter();
-                                show = true;
+                                display = true;
                             }
                         }
 
-                        if(!m_items.empty() && !show)
-                        {
-                            int idx = 0;
-                            while(idx < m_items.size() && m_items[idx]->getPosition() != m_board[i][j]->getPosition())
-                            {
-                                idx++;
-                            }
-
-                            if(idx < m_items.size())
-                            {
-                                m_items[idx]->showItems();
-                                show = true;
-                            }
-                        }
-
-                        if(!show)
+                        if(!display)
                         {
                             m_board[i][j]->showStructure();
                         }
                         break;
                     }
-
-                    case 2:
+                    /*case 2:
                         cout << "|        ";
                         break;
-
+*/
                     default:
                         cout << "|        ";
                         break;

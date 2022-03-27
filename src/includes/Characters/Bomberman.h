@@ -17,6 +17,9 @@ class Bomberman : public Character {
         // augmenter bombes max
         void getBomb(int bomb);
 
+        // augmenter les pv
+        void addHealth(int h);
+
         // affichage Bomberman
         void showCharacter() const override;
         
