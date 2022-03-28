@@ -1,0 +1,11 @@
+10 12
+P,t,t,t,t,t,W,t,PW,t,t,t,
+t,t,W,W,W,t,t,t,W,W,t,W,
+W,t,W,ML,t,t,W,W,t,SC,W,t
+W,t,t,W,W,t,t,W,t,t,t,t,
+PW,t,W,W,t,t,t,SU,t,t,W,W,
+W,MB,t,W,t,t,W,W,t,t,t,t,
+W,t,t,t,t,W,W,t,W,W,t,t,
+t,t,t,t,t,W,W,t,W,W,t,t,
+W,W,W,t,t,t,X,t,W,W,t,t,
+t,t,t,t,t,W,W,W,W,t,t,t,

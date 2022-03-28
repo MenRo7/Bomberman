@@ -89,7 +89,7 @@ int main()
 
 	if(choice == 1)
 	{
-		Map map = mapEditor(1);
+		Map map = mapEditor(2);
 		playerTurn(map);
 	}else	
 		if(choice == 2)

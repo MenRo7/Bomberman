@@ -145,9 +145,9 @@ int Map::getColumns() const
 
 void Map::showMap() const
 {
-    cout << endl << "============================================================================" << endl;
-    cout << endl << "\tPoints de vie : " << m_bomberman.getHealth() << "\t\t\t" << "Nombre de bombes : " << m_bomberman.getBomb() << endl << endl;
-    cout << "============================================================================" << endl;
+    cout << endl << "\t\t============================================================================" << endl;
+    cout << endl << "\t\t\tPoints de vie : " << m_bomberman.getHealth() << "\t\t\t" << "Nombre de bombes : " << m_bomberman.getBomb() << endl << endl;
+    cout << "\t\t============================================================================" << endl;
     for(int i = 0 ; i < m_nbLines ; i++)
     {
         for(int j = 0 ; j < m_nbColumns ; j++)
