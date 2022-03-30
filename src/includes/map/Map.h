@@ -19,7 +19,7 @@ class Map {
 
     public :
         // constructeur
-        Map(int mapid);
+        Map(int mapid, int lines = 8, int columns = 10);
 
         // destructeur
         ~Map();

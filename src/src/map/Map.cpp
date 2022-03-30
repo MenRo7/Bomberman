@@ -16,15 +16,16 @@
 using namespace std;
 using namespace utils;
 
-Map::Map(int mapid)
+Map::Map(int mapid, int lines, int columns) : m_nbLines(lines), m_nbColumns(columns)
 {
     fstream fMap;
     string line;
     string tile;
-    int i;
-    
+
     int lMap = 0;
     int cMap = 0;
+
+    int i;
 
     cout << "MAP LOADING.." << endl << endl;
 
@@ -32,9 +33,6 @@ Map::Map(int mapid)
 
     if(fMap.is_open())
     {
-        fMap >> m_nbLines;
-        fMap >> m_nbColumns;
-
         for(int i = 0 ; i < m_nbLines ; i++)
         {
             m_board.push_back(vector<Tile*>(m_nbColumns));
@@ -145,9 +143,9 @@ int Map::getColumns() const
 
 void Map::showMap() const
 {
-    cout << endl << "\t\t============================================================================" << endl;
-    cout << endl << "\t\t\tPoints de vie : " << m_bomberman.getHealth() << "\t\t\t" << "Nombre de bombes : " << m_bomberman.getBomb() << endl << endl;
-    cout << "\t\t============================================================================" << endl;
+    cout << endl << "\t============================================================================" << endl;
+    cout << endl << "\t\tPoints de vie : " << m_bomberman.getHealth() << "\t\t\t" << "Nombre de bombes : " << m_bomberman.getBomb() << endl << endl;
+    cout << "\t============================================================================" << endl;
     for(int i = 0 ; i < m_nbLines ; i++)
     {
         for(int j = 0 ; j < m_nbColumns ; j++)

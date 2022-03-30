@@ -9,7 +9,7 @@ using namespace std;
 
 Map mapEditor(int level)
 {
-	Map map(level);
+	Map map(level, 8, 10);
 
 	cout << endl;
 
@@ -37,13 +37,13 @@ void playerTurn(Map& map)
 		cout << endl << "Tour " << turn << endl;
 		cout << endl << "Choisissez votre déplacement : " << endl;
 		cout << endl;
-		cout << endl << "==8 pour aller vers le haut==" << endl;
+		cout << endl << "\t8 pour aller vers le haut" << endl;
 		cout << endl;
-		cout << endl << "==2 pour aller vers le bas==" << endl;
+		cout << endl << "\t2 pour aller vers le bas" << endl;
 		cout << endl;
-		cout << endl << "==4 pour aller vers la gauche==" << endl;
+		cout << endl << "\t4 pour aller vers la gauche" << endl;
 		cout << endl;
-		cout << endl << "==6 pour aller vers la droite==" << endl;
+		cout << endl << "\t6 pour aller vers la droite" << endl;
 		cout << endl;
 
 		cin >> direction;
@@ -95,6 +95,7 @@ int main()
 		if(choice == 2)
 		{
 			rules();
+			cout << endl << endl;
 			int choice;
 			cout << endl << "1--Jouer" << endl;
 			cout << endl << "2--Regles du jeu" << endl;
@@ -105,6 +106,7 @@ int main()
 			if(choice == 3)
 			{
 				cout << "Reviens vite champion !" << endl;
+				cout << endl;
 			}
 	
 	return 0;
