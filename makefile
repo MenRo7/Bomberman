@@ -3,8 +3,9 @@ CFLAGS = -Wall
 REP_MAP = src/src/map
 REP_CHARACTER = src/src/characters
 REP_ITEM = src/src/items
+REP_SYSTEM = src/src/system
 EXEC_NAME = game
-OBJ_FILES = $(REP_MAP)/*.cpp $(REP_CHARACTER)/*.cpp $(REP_ITEM)/*.cpp src/main.o 
+OBJ_FILES = $(REP_MAP)/*.cpp $(REP_CHARACTER)/*.cpp $(REP_ITEM)/*.cpp $(REP_SYSTEM)/*.cpp src/main.o 
 
 all : $(EXEC_NAME)
 

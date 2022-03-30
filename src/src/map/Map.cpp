@@ -141,9 +141,24 @@ int Map::getColumns() const
     return m_nbColumns;
 }
 
+Bomberman Map::getPlayer() const
+{
+    return m_bomberman;
+}
+
+Tile Map::getGoal() const
+{
+    return m_goal;
+}
+
 vector<Item*> Map::getItems() const
 {
     return m_items;
+}
+
+vector<Enemy*> Map::getEnemies() const
+{
+    return m_enemies;
 }
 
 void Map::showMap() const

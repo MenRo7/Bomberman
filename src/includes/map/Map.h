@@ -27,7 +27,10 @@ class Map {
         //getters
         int getLines() const;
         int getColumns() const;
+        Bomberman getPlayer() const;
+        Tile getGoal() const;
         std::vector<Item*> getItems() const;
+        std::vector<Enemy*> getEnemies()const;
 
         // affichage Map
         void showMap() const;

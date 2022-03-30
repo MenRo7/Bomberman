@@ -1,13 +1,10 @@
-#include "includes/map/Map.h"
-#include "includes/map/Wall.h"
-
-#include "includes/exceptions/BombermanException.h"
+#include "includes/system/System.h"
 
 #include <iostream>
 
 using namespace std;
 
-Map mapEditor(int level)
+/*Map mapEditor(int level)
 {
 	Map map(level, 8, 10);
 
@@ -77,11 +74,13 @@ void playGame(Map& map)
 {
 	while(1)
 	{
-		playerTurn(map);
-		itemActivation(map);
+		do{
+			playerTurn(map);
+			itemActivation(map);
+		}while(map.getGoal().getPosition() != map.getPlayer().getPosition() || map.getPlayer().getHealth() > 0);
 	}
 }
-
+*/
 int main()
 {
 
@@ -101,15 +100,15 @@ int main()
 	cout << endl;
 	cin>>choice;
 
+	System game(1, 8, 10);
 
 	if(choice == 1)
 	{
-		Map map = mapEditor(2);
-		playGame(map);
+		game.playGame();
 	}else	
 		if(choice == 2)
 		{
-			rules();
+			game.rules();
 			cout << endl << endl;
 			int choice;
 			cout << endl << "1--Jouer" << endl;
