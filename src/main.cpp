@@ -4,87 +4,9 @@
 
 using namespace std;
 
-/*Map mapEditor(int level)
-{
-	Map map(level, 8, 10);
 
-	cout << endl;
-
-	cout << endl << endl;
-
-	map.showMap();
-
-	return map;
-}
-
-void rules()
-{
-	cout << endl << "BIENVENUE DANS BOMBERMAN EVOLVED !" << endl;
-	cout << "Que devez-vous faire ?" << endl;
-	cout << " Controlez un bomberman au sein d'un labyrinthe infeste de monstres en tout genre !\n Les MONSTER qui vous attaquent corps a corps\n Les GHOST qui peuvent traverser les murs\n Les BOWMAN qui vous pulverisent a distance !" << endl;
-	cout << "A l'aide de vos bombes, detruisez les murs, tuez tous les monstres, et atteignez le point de victoire cache quelque part sur la carte !" << endl;
-}
-
-void playerTurn(Map& map)
-{
-	int direction;
-	int turn = 1;
-	
-	cout << endl << "Tour " << turn << endl;
-	cout << endl << "Choisissez votre déplacement : " << endl;
-	cout << endl;
-	cout << endl << "\t8 pour aller vers le haut" << endl;
-	cout << endl;
-	cout << endl << "\t2 pour aller vers le bas" << endl;
-	cout << endl;
-	cout << endl << "\t4 pour aller vers la gauche" << endl;
-	cout << endl;
-	cout << endl << "\t6 pour aller vers la droite" << endl;
-	cout << endl;
-
-	cin >> direction;
-	cout << endl << endl << endl;
-
-	try
-	{
-		map.moveCharacter(direction);
-	}catch(const BombermanException& e)
-	{
-		cerr << e.what() << endl;
-	}
-		
-	map.showMap(); 	
-	turn++;
-}
-
-void itemActivation(Map& map)
-{
-	for(int i = 0 ; i < map.getItems().size() ; i++)
-	{
-		map.activateItem(i);
-	}
-}
-
-void enemyTurn()
-{
-
-}
-
-void playGame(Map& map)
-{
-	while(1)
-	{
-		do{
-			playerTurn(map);
-			itemActivation(map);
-		}while(map.getGoal().getPosition() != map.getPlayer().getPosition() || map.getPlayer().getHealth() > 0);
-	}
-}
-*/
 int main()
 {
-
-	
 	cout << endl;
 	cout << endl << "\t\t\t\t  ---------------------" << endl;
 	cout << endl << "\t\t\t\t |                     |" << endl;
