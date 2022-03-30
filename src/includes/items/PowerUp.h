@@ -11,6 +11,8 @@ class PowerUp : public Item {
 
         void augmentPower();
 
+        bool activate(Bomberman& player, std::vector<Item*> &item, std::vector<std::vector<Tile*>> board) override;
+
         void showItem() const override; 
 
     private :

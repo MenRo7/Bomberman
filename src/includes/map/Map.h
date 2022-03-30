@@ -27,12 +27,15 @@ class Map {
         //getters
         int getLines() const;
         int getColumns() const;
+        std::vector<Item*> getItems() const;
 
         // affichage Map
         void showMap() const;
 
         // mouvement Character sur Map
         void moveCharacter(int direction);
+
+        void activateItem(int idx);
 
     private :
         int m_nbLines;

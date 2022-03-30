@@ -27,44 +27,59 @@ void rules()
 	cout << " Controlez un bomberman au sein d'un labyrinthe infeste de monstres en tout genre !\n Les MONSTER qui vous attaquent corps a corps\n Les GHOST qui peuvent traverser les murs\n Les BOWMAN qui vous pulverisent a distance !" << endl;
 	cout << "A l'aide de vos bombes, detruisez les murs, tuez tous les monstres, et atteignez le point de victoire cache quelque part sur la carte !" << endl;
 }
+
 void playerTurn(Map& map)
 {
 	int direction;
 	int turn = 1;
+	
+	cout << endl << "Tour " << turn << endl;
+	cout << endl << "Choisissez votre déplacement : " << endl;
+	cout << endl;
+	cout << endl << "\t8 pour aller vers le haut" << endl;
+	cout << endl;
+	cout << endl << "\t2 pour aller vers le bas" << endl;
+	cout << endl;
+	cout << endl << "\t4 pour aller vers la gauche" << endl;
+	cout << endl;
+	cout << endl << "\t6 pour aller vers la droite" << endl;
+	cout << endl;
 
-	while(1)
+	cin >> direction;
+	cout << endl << endl << endl;
+
+	try
 	{
-		cout << endl << "Tour " << turn << endl;
-		cout << endl << "Choisissez votre déplacement : " << endl;
-		cout << endl;
-		cout << endl << "\t8 pour aller vers le haut" << endl;
-		cout << endl;
-		cout << endl << "\t2 pour aller vers le bas" << endl;
-		cout << endl;
-		cout << endl << "\t4 pour aller vers la gauche" << endl;
-		cout << endl;
-		cout << endl << "\t6 pour aller vers la droite" << endl;
-		cout << endl;
-
-		cin >> direction;
-		cout << endl << endl << endl;
-
-		try
-		{
-			map.moveCharacter(direction);
-		}catch(const BombermanException& e)
-		{
-			cerr << e.what() << endl;
-		}
+		map.moveCharacter(direction);
+	}catch(const BombermanException& e)
+	{
+		cerr << e.what() << endl;
+	}
 		
-		map.showMap(); 	
-		turn++;
+	map.showMap(); 	
+	turn++;
+}
+
+void itemActivation(Map& map)
+{
+	for(int i = 0 ; i < map.getItems().size() ; i++)
+	{
+		map.activateItem(i);
 	}
 }
 
 void enemyTurn()
 {
 
+}
+
+void playGame(Map& map)
+{
+	while(1)
+	{
+		playerTurn(map);
+		itemActivation(map);
+	}
 }
 
 int main()
@@ -90,7 +105,7 @@ int main()
 	if(choice == 1)
 	{
 		Map map = mapEditor(2);
-		playerTurn(map);
+		playGame(map);
 	}else	
 		if(choice == 2)
 		{

@@ -10,6 +10,19 @@ void MoreLife::augmentHealth(Bomberman& player)
     player.addHealth(m_moreLife);
 }
 
+bool MoreLife::activate(Bomberman& player, std::vector<Item*> &item, std::vector<std::vector<Tile*>> board)
+{
+    bool remove = false;
+
+    if(player.getPosition() == m_position)
+    {
+        augmentHealth(player);
+        remove = true;
+    }
+
+    return remove;
+}
+
 void MoreLife::showItem() const
 {
     std::cout << "MORELIFE";

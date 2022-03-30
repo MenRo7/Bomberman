@@ -12,6 +12,8 @@ class SpeedUp : public Item {
 
         void riseSpeed(Bomberman& player);
 
+        bool activate(Bomberman& player, std::vector<Item*> &item, std::vector<std::vector<Tile*>> board) override;
+
         void showItem() const override;
 
     private :

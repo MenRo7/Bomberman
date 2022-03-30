@@ -9,13 +9,15 @@
 class Bomb : Item {
 
     public :
-        Bomb(utils::BombState estate, int time = 3);
+        Bomb(utils::BombState estate, int x = 0, int y = 0, int time = 3);
         
         static int getPower();
         static int getRange();
 
         static void setPower(int p);
         static void setRange(int r);
+
+        void reduceTime();
 
     private : 
         static int power;

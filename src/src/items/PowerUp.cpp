@@ -10,6 +10,19 @@ void PowerUp::augmentPower()
     Bomb::setPower(Bomb::getPower()+m_powerUp);
 }
 
+bool PowerUp::activate(Bomberman& player, std::vector<Item*> &item, std::vector<std::vector<Tile*>> board)
+{
+    bool remove = false;
+
+    if(player.getPosition() == m_position)
+    {
+        augmentPower();
+        remove = true;
+    }
+
+    return remove;
+}
+
 void PowerUp::showItem() const
 {
     std::cout << "POWER UP";

@@ -2,8 +2,10 @@
 #define __ITEM__
 
 #include<iostream> 
+#include<vector>
 
 #include "../map/Position.h"
+#include "../characters/Bomberman.h"
 
 class Item
 {		
@@ -12,6 +14,8 @@ class Item
 		~Item();
 
 		Position getPosition() const;
+
+		virtual bool activate(Bomberman& player, std::vector<Item*> &item, std::vector<std::vector<Tile*>> board) = 0;
 
 		virtual void showItem() const = 0;
 

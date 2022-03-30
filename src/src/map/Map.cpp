@@ -141,6 +141,11 @@ int Map::getColumns() const
     return m_nbColumns;
 }
 
+vector<Item*> Map::getItems() const
+{
+    return m_items;
+}
+
 void Map::showMap() const
 {
     cout << endl << "\t============================================================================" << endl;
@@ -253,5 +258,16 @@ void Map::moveCharacter(int direction)
         {
             throw BombermanException("Impossible de se deplacer\n");
         }
+}
+
+void Map::activateItem(int idx)
+{
+    if(idx >= 0 && m_items.size() > idx)
+    {
+        if(m_items[idx]->activate(m_bomberman, m_items, m_board))
+        {
+            m_items.erase(m_items.begin()+idx);
+        }
+    }
 }
 
