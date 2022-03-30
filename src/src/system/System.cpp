@@ -28,13 +28,11 @@ void System::playerTurn()
 	cout << endl << "Tour " << turn << endl;
 	cout << endl << "Choisissez votre déplacement : " << endl;
 	cout << endl;
-	cout << endl << "\t8 pour aller vers le haut" << endl;
+	cout << "\t8 pour aller vers le haut";
+	cout << "\t2 pour aller vers le bas";
 	cout << endl;
-	cout << endl << "\t2 pour aller vers le bas" << endl;
-	cout << endl;
-	cout << endl << "\t4 pour aller vers la gauche" << endl;
-	cout << endl;
-	cout << endl << "\t6 pour aller vers la droite" << endl;
+	cout << "\t4 pour aller vers la gauche";
+	cout << "\t6 pour aller vers la droite";
 	cout << endl;
 
 	cin >> direction;

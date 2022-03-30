@@ -5,7 +5,6 @@
 
 #include "../map/Tile.h"
 #include "../map/Position.h"
-#include "../utils/utils.h"
 
 
 class Character {

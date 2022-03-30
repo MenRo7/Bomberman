@@ -14,7 +14,6 @@
 #include "../../includes/exceptions/BombermanException.h"
 
 using namespace std;
-using namespace utils;
 
 Map::Map(int mapid, int lines, int columns) : m_nbLines(lines), m_nbColumns(columns)
 {

@@ -1,12 +1,11 @@
 #include "../../includes/items/Bomb.h"
 
 using namespace std;
-using namespace utils;
 
 int Bomb::power = 1;
 int Bomb::range = 1;
 
-Bomb::Bomb(BombState estate, int x, int y, int time) : m_estate(estate), Item(x ,y), m_time(time)
+Bomb::Bomb(int x, int y, int time) : Item(x ,y), m_time(time)
 {
     //
 }
