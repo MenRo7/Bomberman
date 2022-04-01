@@ -22,10 +22,8 @@ void System::showGame() const
 
 void System::playerTurn()
 {
-	int direction;
-	int turn = 1;
+	int choice;
 	
-	cout << endl << "Tour " << turn << endl;
 	cout << endl << "Choisissez votre déplacement : " << endl;
 	cout << endl;
 	cout << "\t8 pour aller vers le haut";
@@ -34,20 +32,29 @@ void System::playerTurn()
 	cout << "\t4 pour aller vers la gauche";
 	cout << "\t6 pour aller vers la droite";
 	cout << endl;
+	cout << "\t\t\t0 pour poser une bombe";
+	cout << endl;
 
-	cin >> direction;
+	cin >> choice;
 	cout << endl << endl << endl;
+	
+	switch(choice)
+	{
+		case 0:
+			m_game.addBomb(m_game.getBomberman().getPosition());
+			break;
 
-	try
-	{
-		m_game.moveCharacter(direction);
-	}catch(const BombermanException& e)
-	{
-		cerr << e.what() << endl;
+		default:
+			try
+			{
+				m_game.moveCharacter(choice);
+			}catch(const BombermanException& e)
+			{
+				cerr << e.what() << endl;
+			}
 	}
 		
 	m_game.showMap(); 	
-	turn++;
 }
 
 void System::itemActivation()
@@ -63,14 +70,25 @@ void System::enemyTurn()
 
 }
 
+void System::runningBomb()
+{
+	for(int i = 0 ; i < m_game.getBomb().size() ; i++)
+	{
+		m_game.activateBomb(i);
+	}
+}
+
 void System::playGame()
 {
+	int turn = 1;
     showGame();
-	while(1)
-	{
-		do{
-			playerTurn();
-			itemActivation();
-		}while(m_game.getGoal().getPosition() != m_game.getPlayer().getPosition() || m_game.getPlayer().getHealth() > 0);
-	}
+	cout << "Tour " << turn << endl;
+	turn++;
+	do{
+		playerTurn();
+		itemActivation();
+		runningBomb();
+		cout << "Tour " << turn << endl;
+		turn++;
+	}while(m_game.getGoal().getPosition() != m_game.getBomberman().getPosition() || m_game.getBomberman().getHealth() > 0);
 }

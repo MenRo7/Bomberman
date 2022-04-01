@@ -22,7 +22,7 @@ int main()
 	cout << endl;
 	cin>>choice;
 
-	System game(1, 8, 10);
+	System game(2, 8, 10);
 
 	if(choice == 1)
 	{

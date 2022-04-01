@@ -25,6 +25,8 @@ class Character {
         // déplacement
         bool move(int direction);
 
+        void takeDamage(int dmg);
+
         // affichage (virtuelle pure)
         virtual void showCharacter() const = 0;
         

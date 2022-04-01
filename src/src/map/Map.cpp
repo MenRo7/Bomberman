@@ -1,10 +1,7 @@
 #include "../../includes/map/Map.h"
-#include "../../includes/map/Wall.h"
-#include "../../includes/map/Position.h"
 
 #include "../../includes/characters/Ghost.h"
 
-#include "../../includes/items/Item.h"
 #include "../../includes/items/MoreLife.h"
 #include "../../includes/items/SpeedUp.h"
 #include "../../includes/items/MoreBomb.h"
@@ -140,7 +137,7 @@ int Map::getColumns() const
     return m_nbColumns;
 }
 
-Bomberman Map::getPlayer() const
+Bomberman Map::getBomberman() const
 {
     return m_bomberman;
 }
@@ -150,15 +147,22 @@ Tile Map::getGoal() const
     return m_goal;
 }
 
+vector<Enemy*> Map::getEnemies() const
+{
+    return m_enemies;
+}
+
+vector<Bomb*> Map::getBomb() const
+{
+    return m_bomb;
+}
+
 vector<Item*> Map::getItems() const
 {
     return m_items;
 }
 
-vector<Enemy*> Map::getEnemies() const
-{
-    return m_enemies;
-}
+
 
 void Map::showMap() const
 {
@@ -224,6 +228,21 @@ void Map::showMap() const
                             }
                         }
 
+                        if(!display && !m_bomb.empty())
+                        {
+                            int idx = 0;
+                            while(idx < m_bomb.size() && m_bomb[idx]->getPosition() != m_board[i][j]->getPosition())
+                            {
+                                idx++;
+                            }
+
+                            if(idx < m_bomb.size())
+                            {
+                                m_bomb[idx]->showItem();
+                                display = true;
+                            }
+                        }
+
                         if(!display)
                         {
                             m_board[i][j]->showStructure();
@@ -285,3 +304,22 @@ void Map::activateItem(int idx)
     }
 }
 
+void Map::addBomb(Position p)
+{
+    if(m_bomberman.putBomb() == true)
+    {
+        m_bomb.push_back(new Bomb(p.getX(), p.getY(), 3));
+    }
+}
+
+void Map::activateBomb(int idx)
+{
+    if(idx >= 0 && m_bomb.size() < idx)
+    {
+        if(m_bomb[idx]->activate(m_bomberman, m_items, m_board))
+        {
+            //bombExplosion(m_bomb[idx]->getPosition());
+            m_bomb.erase(m_bomb.begin()+idx);
+        }
+    }
+}

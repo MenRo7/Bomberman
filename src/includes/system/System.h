@@ -19,6 +19,7 @@ class System {
         void playerTurn();
         void itemActivation();
         void enemyTurn();
+        void runningBomb();
 
         void playGame();
 

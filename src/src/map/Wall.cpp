@@ -19,6 +19,11 @@ Wall::Wall(int x, int y, bool cross, int health, bool destroyable) : Tile(x, y, 
 
 }
 
+int Wall::getHealth() const
+{
+    return m_health;
+}
+
 void Wall::destroyWall()
 {
     if(m_health > 0 && m_destroyable == true)
@@ -29,5 +34,13 @@ void Wall::destroyWall()
 
 void Wall::showStructure() const
 {
-    std::cout << "  WALL  ";
+    if(m_destroyable == true)
+    {
+        if(m_health == 1)
+        {
+            std::cout << "  wall  ";
+        }else
+            std::cout << "  WALL  ";
+    }
+        
 }

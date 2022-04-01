@@ -14,7 +14,7 @@ class Bomberman : public Character {
         int getBomb() const;
 
         // poser une bombe
-        //void putBomb();
+        bool putBomb();
 
         // augmenter bombes max
         void PickUpBomb(int b);

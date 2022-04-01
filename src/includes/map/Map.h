@@ -8,11 +8,13 @@
 
 #include "Tile.h"
 #include "Wall.h"
+#include "Position.h"
 
 #include "../characters/Bomberman.h"
 #include "../characters/Enemy.h"
 
 #include "../items/Item.h"
+#include "../items/Bomb.h"
 
 
 class Map {
@@ -27,10 +29,11 @@ class Map {
         //getters
         int getLines() const;
         int getColumns() const;
-        Bomberman getPlayer() const;
+        Bomberman getBomberman() const;
         Tile getGoal() const;
+        std::vector<Enemy*> getEnemies() const;
+        std::vector<Bomb*> getBomb() const;
         std::vector<Item*> getItems() const;
-        std::vector<Enemy*> getEnemies()const;
 
         // affichage Map
         void showMap() const;
@@ -40,11 +43,16 @@ class Map {
 
         void activateItem(int idx);
 
+        void addBomb(Position p);
+        
+        void activateBomb(int idx);
+
     private :
         int m_nbLines;
         int m_nbColumns;
         std::vector<std::vector<Tile*>> m_board;
         std::vector<Enemy*> m_enemies;
+        std::vector<Bomb*> m_bomb;
         std::vector<Item*> m_items;
         Bomberman m_bomberman;
         Tile m_goal;

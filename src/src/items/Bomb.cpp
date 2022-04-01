@@ -30,7 +30,22 @@ void Bomb::setRange(int r)
     range = r;
 }
 
-void Bomb::reduceTime()
+bool Bomb::activate(Bomberman& player, std::vector<Item*> &item, std::vector<std::vector<Tile*>> board)
 {
+    bool cancel = false;
 
+    if(m_time > 0)
+    {
+        m_time--;
+    }else
+        {
+            cancel = true;
+        }
+
+    return cancel;
+}
+
+void Bomb::showItem() const
+{
+    std::cout << "  BOMB  ";
 }

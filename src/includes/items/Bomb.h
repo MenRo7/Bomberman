@@ -5,7 +5,7 @@
 
 #include<iostream>
 
-class Bomb : Item {
+class Bomb : public Item {
 
     public :
         Bomb(int x = 0, int y = 0, int time = 3);
@@ -16,8 +16,10 @@ class Bomb : Item {
         static void setPower(int p);
         static void setRange(int r);
 
-        void reduceTime();
+        bool activate(Bomberman& player, std::vector<Item*> &item, std::vector<std::vector<Tile*>> board) override;
 
+        void showItem() const override;
+        
     private : 
         static int power;
         static int range;

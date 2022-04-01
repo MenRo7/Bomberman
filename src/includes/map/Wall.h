@@ -12,6 +12,8 @@ class Wall : public Tile {
         // constructeur
         Wall(int x, int y, bool cross, int health, bool destroyable);
         
+        int getHealth() const;
+        
         // affaiblissement
         void destroyWall();
         

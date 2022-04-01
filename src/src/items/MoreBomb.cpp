@@ -12,15 +12,15 @@ void MoreBomb::addBomb(Bomberman& player)
 
 bool MoreBomb::activate(Bomberman& player, std::vector<Item*> &item, std::vector<std::vector<Tile*>> board)
 {
-    bool remove = false;
+    bool cancel = false;
 
-    if(player.getPosition() == m_position)
+    if(m_position == player.getPosition())
     {
         addBomb(player);
-        remove = true;
+        cancel = true;
     }
 
-    return remove;
+    return cancel;
 }
 
 void MoreBomb::showItem() const

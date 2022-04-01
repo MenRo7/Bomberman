@@ -12,15 +12,15 @@ void SpeedUp::riseSpeed(Bomberman& player)
 
 bool SpeedUp::activate(Bomberman& player, std::vector<Item*> &item, std::vector<std::vector<Tile*>> board)
 {
-    bool remove = false;
+    bool cancel = false;
 
-    if(player.getPosition() == m_position)
+    if(m_position == player.getPosition())
     {
         riseSpeed(player);
-        remove = true;
+        cancel = true;
     }
 
-    return remove;
+    return cancel;
 }
 
 void SpeedUp::showItem() const
