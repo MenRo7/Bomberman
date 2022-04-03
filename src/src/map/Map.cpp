@@ -1,5 +1,6 @@
 #include "../../includes/map/Map.h"
 
+#include "../../includes/characters/Monster.h"
 #include "../../includes/characters/Ghost.h"
 
 #include "../../includes/items/MoreLife.h"
@@ -89,10 +90,20 @@ Map::Map(int mapid, int lines, int columns) : m_nbLines(lines), m_nbColumns(colu
                                                     m_board[lMap][cMap] = new Tile(lMap, cMap, true);
                                                     m_items.push_back(new PowerUp(lMap, cMap));
                                                 }else
+                                                    if(tile.compare("M") == 0)
                                                     {
-                                                        m_board[lMap][cMap] = new Tile(lMap, cMap, true);
-                                                    }
-                                                    cMap++;
+                                                        m_board[lMap][cMap] = new Tile(lMap, cMap, false);
+                                                        m_enemies.push_back(new Monster(lMap, cMap, 1, 1, 1));
+                                                    }else
+                                                        if(tile.compare("G") == 0)
+                                                        {
+                                                            m_board[lMap][cMap] = new Tile(lMap, cMap, false);
+                                                            m_enemies.push_back(new Ghost(lMap, cMap, 1, 1, 1));
+                                                        }else
+                                                            {
+                                                                m_board[lMap][cMap] = new Tile(lMap, cMap, true);
+                                                            }
+                                                            cMap++;
                 }
                 i++;
             }
@@ -124,6 +135,11 @@ Map::~Map()
     for(int i = 0 ; i < m_items.size() ; i++)
     {
         delete m_items[i];
+    }
+
+    for(int i = 0 ; i < m_bomb.size() ; i++)
+    {
+        delete m_bomb[i];
     }
 }
 
@@ -161,7 +177,6 @@ vector<Item*> Map::getItems() const
 {
     return m_items;
 }
-
 
 
 void Map::showMap() const
@@ -278,7 +293,7 @@ void Map::moveCharacter(int direction)
 
     if(!m_board[cloneBomberman.getPosition().getX()][cloneBomberman.getPosition().getY()]->getCross())
     {
-        throw BombermanException("Un mur sur votre route ! Contournez-le !\n");
+        throw BombermanException("Cette case est inaccessible ! Contournez-la !\n");
     }
 
     cloneBomberman = m_bomberman;
@@ -318,7 +333,6 @@ void Map::activateBomb(int idx)
     {
         if(m_bomb[idx]->activate(m_bomberman, m_items, m_board))
         {
-            //bombExplosion(m_bomb[idx]->getPosition());
             m_bomb.erase(m_bomb.begin()+idx);
         }
     }

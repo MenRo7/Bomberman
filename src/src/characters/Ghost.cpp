@@ -4,12 +4,8 @@ Ghost::Ghost(int x, int y, int health, int speed, int damage): Enemy(x, y , heal
 {
 
 }
-Ghost::~Ghost()
-{
-
-}
 
 void Ghost::showCharacter() const
 {
-	std::cout << " GHOST ";
+	std::cout << " GHOST  ";
 }
