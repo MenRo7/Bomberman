@@ -20,13 +20,10 @@
 class Map {
 
     public :
-        // constructeur
         Map(int mapid, int lines = 8, int columns = 10);
 
-        // destructeur
         ~Map();
 
-        //getters
         int getLines() const;
         int getColumns() const;
         Bomberman getBomberman() const;
@@ -35,16 +32,10 @@ class Map {
         std::vector<Bomb*> getBomb() const;
         std::vector<Item*> getItems() const;
 
-        // affichage Map
         void showMap() const;
-
-        // mouvement Character sur Map
         void moveCharacter(int direction);
-
         void activateItem(int idx);
-
-        void addBomb(Position p);
-        
+        void addBomb(Position p); 
         void activateBomb(int idx);
 
     private :

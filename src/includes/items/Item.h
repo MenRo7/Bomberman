@@ -14,14 +14,11 @@ class Item
 		~Item();
 
 		Position getPosition() const;
-
 		virtual bool activate(Bomberman& player, std::vector<Item*> &item, std::vector<std::vector<Tile*>> board) = 0;
-
 		virtual void showItem() const = 0;
 
 	protected:
 		Position m_position;
 };
-
 
 #endif

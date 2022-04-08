@@ -8,10 +8,8 @@
 class Enemy : public Character {
 
     public :
-        // constructeur
         Enemy(int x, int y, int health, int speed, int damage);
 
-        // destructeur 
         ~Enemy();
         
     protected :

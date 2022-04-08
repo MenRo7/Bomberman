@@ -11,9 +11,7 @@ class SpeedUp : public Item {
         SpeedUp(int x = 0, int y = 0, int speed = 1);
 
         void riseSpeed(Bomberman& player);
-
         bool activate(Bomberman& player, std::vector<Item*> &item, std::vector<std::vector<Tile*>> board) override;
-
         void showItem() const override;
 
     private :

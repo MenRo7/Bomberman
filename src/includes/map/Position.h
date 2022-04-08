@@ -4,14 +4,12 @@
 class Position
 {		
 	public:
-        //constructeur
 		Position(int x, int y);
 
-        // getters
+
 		int getX() const;
 		int getY() const;
 
-        // setters
 		void setX(int x);
 		void setY(int y);
 

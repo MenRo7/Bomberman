@@ -10,24 +10,17 @@
 class Character {
 
     public :
-        // constructeur
         Character(int x = 0, int y = 0, int health = 1, int speed = 1);
 
-        // getters
         int getHealth() const;
         int getSpeed() const;
         Position getPosition() const;
 
-        // setters
         void setHealth(int h);
         void setSpeed(int s);
 
-        // déplacement
         bool move(int direction);
-
         void takeDamage(int dmg);
-
-        // affichage (virtuelle pure)
         virtual void showCharacter() const = 0;
         
     protected :

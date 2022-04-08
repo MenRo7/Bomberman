@@ -15,9 +15,7 @@ class Bomb : public Item {
 
         static void setPower(int p);
         static void setRange(int r);
-
         bool activate(Bomberman& player, std::vector<Item*> &item, std::vector<std::vector<Tile*>> board) override;
-
         void showItem() const override;
         
     private : 

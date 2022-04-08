@@ -9,15 +9,12 @@
 class Wall : public Tile {
 
     public :
-        // constructeur
         Wall(int x, int y, bool cross, int health, bool destroyable);
         
         int getHealth() const;
         
-        // affaiblissement
         void destroyWall();
         
-        // affichage Wall
         void showStructure() const override;
 
     private :

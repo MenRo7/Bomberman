@@ -8,24 +8,18 @@
 class Bomberman : public Character {
 
     public :
-        // constructeur
         Bomberman(int x = 0, int y = 0, int health = 1, int speed = 1, int bomb = 1);
 
         int getBomb() const;
 
-        // poser une bombe
         bool putBomb();
 
-        // augmenter bombes max
         void PickUpBomb(int b);
 
-        // augmenter les pv
         void addHealth(int h);
 
-        //augmenter la vitesse
         void augmentSpeed(int sp);
 
-        // affichage Bomberman
         void showCharacter() const override;
         
     private :
