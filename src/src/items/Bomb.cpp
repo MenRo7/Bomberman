@@ -30,7 +30,7 @@ void Bomb::setRange(int r)
     range = r;
 }
 
-bool Bomb::activate(Bomberman& player, std::vector<Item*> &item, std::vector<std::vector<Tile*>> board)
+bool Bomb::activate(Bomberman& player)
 {
     bool cancel = false;
 

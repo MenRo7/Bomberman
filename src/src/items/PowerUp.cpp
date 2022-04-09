@@ -10,7 +10,7 @@ void PowerUp::augmentPower()
     Bomb::setPower(Bomb::getPower()+m_powerUp);
 }
 
-bool PowerUp::activate(Bomberman& player, std::vector<Item*> &item, std::vector<std::vector<Tile*>> board)
+bool PowerUp::activate(Bomberman& player)
 {
     bool cancel = false;
 

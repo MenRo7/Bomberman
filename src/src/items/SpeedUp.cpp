@@ -10,7 +10,7 @@ void SpeedUp::riseSpeed(Bomberman& player)
     player.augmentSpeed(m_speedUp);
 }
 
-bool SpeedUp::activate(Bomberman& player, std::vector<Item*> &item, std::vector<std::vector<Tile*>> board)
+bool SpeedUp::activate(Bomberman& player)
 {
     bool cancel = false;
 

@@ -10,7 +10,7 @@ void MoreBomb::addBomb(Bomberman& player)
     player.PickUpBomb(m_moreBomb);
 }
 
-bool MoreBomb::activate(Bomberman& player, std::vector<Item*> &item, std::vector<std::vector<Tile*>> board)
+bool MoreBomb::activate(Bomberman& player)
 {
     bool cancel = false;
 

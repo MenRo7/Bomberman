@@ -312,7 +312,7 @@ void Map::activateItem(int idx)
 {
     if(idx >= 0 && m_items.size() > idx)
     {
-        if(m_items[idx]->activate(m_bomberman, m_items, m_board))
+        if(m_items[idx]->activate(m_bomberman))
         {
             m_items.erase(m_items.begin()+idx);
         }
@@ -331,7 +331,7 @@ void Map::activateBomb(int idx)
 {
     if(idx >= 0 && m_bomb.size() < idx)
     {
-        if(m_bomb[idx]->activate(m_bomberman, m_items, m_board))
+        if(m_bomb[idx]->activate(m_bomberman))
         {
             m_bomb.erase(m_bomb.begin()+idx);
         }

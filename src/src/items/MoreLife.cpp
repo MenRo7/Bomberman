@@ -10,7 +10,7 @@ void MoreLife::augmentHealth(Bomberman& player)
     player.addHealth(m_moreLife);
 }
 
-bool MoreLife::activate(Bomberman& player, std::vector<Item*> &item, std::vector<std::vector<Tile*>> board)
+bool MoreLife::activate(Bomberman& player)
 {
     bool cancel = false;
 

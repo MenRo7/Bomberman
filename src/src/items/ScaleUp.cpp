@@ -9,7 +9,7 @@ void ScaleUp::augmentRange()
 {
     Bomb::setRange(Bomb::getRange()+m_scaleUp);
 }
-bool ScaleUp::activate(Bomberman& player, std::vector<Item*> &item, std::vector<std::vector<Tile*>> board)
+bool ScaleUp::activate(Bomberman& player)
 {
     bool cancel = false;
 
