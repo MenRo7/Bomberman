@@ -1,0 +1,233 @@
+\hypertarget{class_character}{}\doxysection{Character Class Reference}
+\label{class_character}\index{Character@{Character}}
+
+
+Classe abstraite qui définit un personnage.  
+
+
+
+
+{\ttfamily \#include $<$Character.\+h$>$}
+
+Inheritance diagram for Character\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_character}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_character_a5add67909368075bd0d8a23c4abef1e1}{Character}} (int x=0, int y=0, int health=1, int speed=1)
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut/initialisation de \mbox{\hyperlink{class_character}{Character}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_character_a39eeebcbdbc13cd4d1d274da5d051f85}{get\+Health}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur de m\+\_\+health. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_character_ad8d0cc994c65fe4e98cbb7c8eb79f160}{get\+Speed}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur de m\+\_\+speed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_position}{Position}} \mbox{\hyperlink{class_character_a01e28eea2c300aa235f3f29468d3c734}{get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur de m\+\_\+position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_character_a6eccf7ac028dd5e830cdbe2fde577df5}{set\+Health}} (int h)
+\begin{DoxyCompactList}\small\item\em Modificateur de m\+\_\+health. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_character_a11a4732379fb152a0b77342e92f52a34}{set\+Speed}} (int s)
+\begin{DoxyCompactList}\small\item\em Modificateur de m\+\_\+speed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_character_ab27a1bb15143a389a95d0fc164d30a9b}{move}} (int direction)
+\begin{DoxyCompactList}\small\item\em Mouvement du \mbox{\hyperlink{class_character}{Character}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_character_a2827d85b96fd2944b6599ad0fc1586f1}{take\+Damage}} (int dmg)
+\begin{DoxyCompactList}\small\item\em Infligement de dégâts au \mbox{\hyperlink{class_character}{Character}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_character_a6a51cc31fc966021c66dd34385e38bf4}{show\+Character}} () const =0
+\begin{DoxyCompactList}\small\item\em Affichage de \mbox{\hyperlink{class_character}{Character}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_character_ae6d98cd146e07d0eec8a60df9b78a623}{m\+\_\+health}}
+\item 
+int \mbox{\hyperlink{class_character_ab0b8ba10b25da5ca7bcea0abeb4ed0d0}{m\+\_\+speed}}
+\item 
+\mbox{\hyperlink{class_position}{Position}} \mbox{\hyperlink{class_character_ac318ee28af68ef3ec8b14ecaffcabd7b}{m\+\_\+position}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe abstraite qui définit un personnage. 
+
+\begin{DoxyAuthor}{Author}
+Romain GARNIER
+\end{DoxyAuthor}
+Classe mère des personnages 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_character_a5add67909368075bd0d8a23c4abef1e1}\label{class_character_a5add67909368075bd0d8a23c4abef1e1}} 
+\index{Character@{Character}!Character@{Character}}
+\index{Character@{Character}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{Character()}{Character()}}
+{\footnotesize\ttfamily Character\+::\+Character (\begin{DoxyParamCaption}\item[{int}]{x = {\ttfamily 0},  }\item[{int}]{y = {\ttfamily 0},  }\item[{int}]{health = {\ttfamily 1},  }\item[{int}]{speed = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Constructeur par défaut/initialisation de \mbox{\hyperlink{class_character}{Character}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & abscisse de la position\\
+\hline
+{\em y} & ordonnée de la position\\
+\hline
+{\em health} & points de vie du personnage\\
+\hline
+{\em speed} & vitesse du personnage \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_character_a39eeebcbdbc13cd4d1d274da5d051f85}\label{class_character_a39eeebcbdbc13cd4d1d274da5d051f85}} 
+\index{Character@{Character}!getHealth@{getHealth}}
+\index{getHealth@{getHealth}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{getHealth()}{getHealth()}}
+{\footnotesize\ttfamily int Character\+::get\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur de m\+\_\+health. 
+
+\begin{DoxyReturn}{Returns}
+entier m\+\_\+health 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_a01e28eea2c300aa235f3f29468d3c734}\label{class_character_a01e28eea2c300aa235f3f29468d3c734}} 
+\index{Character@{Character}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_position}{Position}} Character\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur de m\+\_\+position. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_position}{Position}} m\+\_\+position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_ad8d0cc994c65fe4e98cbb7c8eb79f160}\label{class_character_ad8d0cc994c65fe4e98cbb7c8eb79f160}} 
+\index{Character@{Character}!getSpeed@{getSpeed}}
+\index{getSpeed@{getSpeed}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{getSpeed()}{getSpeed()}}
+{\footnotesize\ttfamily int Character\+::get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur de m\+\_\+speed. 
+
+\begin{DoxyReturn}{Returns}
+entier m\+\_\+speed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_ab27a1bb15143a389a95d0fc164d30a9b}\label{class_character_ab27a1bb15143a389a95d0fc164d30a9b}} 
+\index{Character@{Character}!move@{move}}
+\index{move@{move}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily bool Character\+::move (\begin{DoxyParamCaption}\item[{int}]{direction }\end{DoxyParamCaption})}
+
+
+
+Mouvement du \mbox{\hyperlink{class_character}{Character}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & direction à suivre par le personnage\\
+\hline
+\end{DoxyParams}
+méthode utilisée dans move\+Character(int) de la classe \mbox{\hyperlink{class_map}{Map}}
+
+\begin{DoxyAuthor}{Author}
+Romain GARNIER 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{class_character_a6eccf7ac028dd5e830cdbe2fde577df5}\label{class_character_a6eccf7ac028dd5e830cdbe2fde577df5}} 
+\index{Character@{Character}!setHealth@{setHealth}}
+\index{setHealth@{setHealth}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{setHealth()}{setHealth()}}
+{\footnotesize\ttfamily void Character\+::set\+Health (\begin{DoxyParamCaption}\item[{int}]{h }\end{DoxyParamCaption})}
+
+
+
+Modificateur de m\+\_\+health. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & nouvelle valeur de m\+\_\+health \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_character_a11a4732379fb152a0b77342e92f52a34}\label{class_character_a11a4732379fb152a0b77342e92f52a34}} 
+\index{Character@{Character}!setSpeed@{setSpeed}}
+\index{setSpeed@{setSpeed}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{setSpeed()}{setSpeed()}}
+{\footnotesize\ttfamily void Character\+::set\+Speed (\begin{DoxyParamCaption}\item[{int}]{s }\end{DoxyParamCaption})}
+
+
+
+Modificateur de m\+\_\+speed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & nouvelle valeur de m\+\_\+speed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_character_a6a51cc31fc966021c66dd34385e38bf4}\label{class_character_a6a51cc31fc966021c66dd34385e38bf4}} 
+\index{Character@{Character}!showCharacter@{showCharacter}}
+\index{showCharacter@{showCharacter}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{showCharacter()}{showCharacter()}}
+{\footnotesize\ttfamily virtual void Character\+::show\+Character (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Affichage de \mbox{\hyperlink{class_character}{Character}}. 
+
+méthode virtuelle pure non définissable 
+
+Implemented in \mbox{\hyperlink{class_bomberman_a23128f2b6033aead9f6392f83fb77564}{Bomberman}}, \mbox{\hyperlink{class_ghost_a94a5faa487efb0556f543affca611ab2}{Ghost}}, and \mbox{\hyperlink{class_monster_aa56491118d6c3f969bb3535e6f313ab7}{Monster}}.
+
+\mbox{\Hypertarget{class_character_a2827d85b96fd2944b6599ad0fc1586f1}\label{class_character_a2827d85b96fd2944b6599ad0fc1586f1}} 
+\index{Character@{Character}!takeDamage@{takeDamage}}
+\index{takeDamage@{takeDamage}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{takeDamage()}{takeDamage()}}
+{\footnotesize\ttfamily void Character\+::take\+Damage (\begin{DoxyParamCaption}\item[{int}]{dmg }\end{DoxyParamCaption})}
+
+
+
+Infligement de dégâts au \mbox{\hyperlink{class_character}{Character}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dmg} & nombre de dégâts subi\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+booléen si le déplacement à été fait
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Romain GARNIER 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_character_ae6d98cd146e07d0eec8a60df9b78a623}\label{class_character_ae6d98cd146e07d0eec8a60df9b78a623}} 
+\index{Character@{Character}!m\_health@{m\_health}}
+\index{m\_health@{m\_health}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{m\_health}{m\_health}}
+{\footnotesize\ttfamily int Character\+::m\+\_\+health\hspace{0.3cm}{\ttfamily [protected]}}
+
+points de vie de \mbox{\hyperlink{class_character}{Character}} \mbox{\Hypertarget{class_character_ac318ee28af68ef3ec8b14ecaffcabd7b}\label{class_character_ac318ee28af68ef3ec8b14ecaffcabd7b}} 
+\index{Character@{Character}!m\_position@{m\_position}}
+\index{m\_position@{m\_position}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{m\_position}{m\_position}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_position}{Position}} Character\+::m\+\_\+position\hspace{0.3cm}{\ttfamily [protected]}}
+
+position de \mbox{\hyperlink{class_character}{Character}} \mbox{\Hypertarget{class_character_ab0b8ba10b25da5ca7bcea0abeb4ed0d0}\label{class_character_ab0b8ba10b25da5ca7bcea0abeb4ed0d0}} 
+\index{Character@{Character}!m\_speed@{m\_speed}}
+\index{m\_speed@{m\_speed}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{m\_speed}{m\_speed}}
+{\footnotesize\ttfamily int Character\+::m\+\_\+speed\hspace{0.3cm}{\ttfamily [protected]}}
+
+vitesse de \mbox{\hyperlink{class_character}{Character}} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+characters/\mbox{\hyperlink{_character_8h}{Character.\+h}}\item 
+C\+:/\+Users/romte/\+Desktop/\+Bomberman/src/src/characters/Character.\+cpp\end{DoxyCompactItemize}

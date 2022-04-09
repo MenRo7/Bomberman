@@ -1,0 +1,44 @@
+\hypertarget{_character_8h_source}{}\doxysection{Character.\+h}
+\label{_character_8h_source}\index{characters/Character.h@{characters/Character.h}}
+\mbox{\hyperlink{_character_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef \_\_CHARACTER\_\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define \_\_CHARACTER\_\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include<iostream>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}../map/Tile.h"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}../map/Position.h"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{class_character}{Character}} \{}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     public :}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{39         \mbox{\hyperlink{class_character_a5add67909368075bd0d8a23c4abef1e1}{Character}}(\textcolor{keywordtype}{int} x = 0, \textcolor{keywordtype}{int} y = 0, \textcolor{keywordtype}{int} health = 1, \textcolor{keywordtype}{int} speed = 1);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{46         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_character_a39eeebcbdbc13cd4d1d274da5d051f85}{getHealth}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{53         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_character_ad8d0cc994c65fe4e98cbb7c8eb79f160}{getSpeed}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{60         \mbox{\hyperlink{class_position}{Position}} \mbox{\hyperlink{class_character_a01e28eea2c300aa235f3f29468d3c734}{getPosition}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{67         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_character_a6eccf7ac028dd5e830cdbe2fde577df5}{setHealth}}(\textcolor{keywordtype}{int} h);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{74         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_character_a11a4732379fb152a0b77342e92f52a34}{setSpeed}}(\textcolor{keywordtype}{int} s);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{85         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_character_ab27a1bb15143a389a95d0fc164d30a9b}{move}}(\textcolor{keywordtype}{int} direction);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{96         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_character_a2827d85b96fd2944b6599ad0fc1586f1}{takeDamage}}(\textcolor{keywordtype}{int} dmg);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{103         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_character_a6a51cc31fc966021c66dd34385e38bf4}{showCharacter}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{104         }
+\DoxyCodeLine{105     protected :}
+\DoxyCodeLine{106         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_character_ae6d98cd146e07d0eec8a60df9b78a623}{m\_health}}; }
+\DoxyCodeLine{107         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_character_ab0b8ba10b25da5ca7bcea0abeb4ed0d0}{m\_speed}}; }
+\DoxyCodeLine{108         \mbox{\hyperlink{class_position}{Position}} \mbox{\hyperlink{class_character_ac318ee28af68ef3ec8b14ecaffcabd7b}{m\_position}}; }
+\DoxyCodeLine{110 \};}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

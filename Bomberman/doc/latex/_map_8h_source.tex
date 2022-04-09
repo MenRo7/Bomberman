@@ -1,0 +1,71 @@
+\hypertarget{_map_8h_source}{}\doxysection{Map.\+h}
+\label{_map_8h_source}\index{map/Map.h@{map/Map.h}}
+\mbox{\hyperlink{_map_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef \_\_MAP\_\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define \_\_MAP\_\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include<iostream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include<fstream>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include<stdlib.h>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_tile_8h}{Tile.h}}"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_wall_8h}{Wall.h}}"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_position_8h}{Position.h}}"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}../characters/Bomberman.h"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}../characters/Enemy.h"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}../items/Item.h"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}../items/Bomb.h"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{38 \textcolor{keyword}{class }\mbox{\hyperlink{class_map}{Map}} \{}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     public :}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{47        \mbox{\hyperlink{class_map_a212ad66a2f8e34385234cac9eabe055e}{Map}}(\textcolor{keywordtype}{int} mapid, \textcolor{keywordtype}{int} lines = 8, \textcolor{keywordtype}{int} columns = 10);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{52         \mbox{\hyperlink{class_map_aa403fbe09394ccf39747588f5168e3b2}{\string~Map}}();}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{59         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_map_a741df5bd19d69169210d64f483914f26}{getLines}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{66         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_map_a9ba9ffb276bc374a9fe43a48df311c84}{getColumns}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{73         \mbox{\hyperlink{class_bomberman}{Bomberman}} \mbox{\hyperlink{class_map_ac704daf08e619bc86c2b40e214e15ba7}{getBomberman}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{80         \mbox{\hyperlink{class_tile}{Tile}} \mbox{\hyperlink{class_map_a1618acc599eef28811230a393d680a7a}{getGoal}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{87         std::vector<Enemy*> \mbox{\hyperlink{class_map_ab07c3345c2abfa22f2effddb5a454cb5}{getEnemies}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{94         std::vector<Bomb*> \mbox{\hyperlink{class_map_a8ea0cc69e9de38e622f07d9d088f108f}{getBomb}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{101         std::vector<Item*> \mbox{\hyperlink{class_map_a308d5c4c6bb29604228d03492ac74d93}{getItems}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{108         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_map_a49670a6c7bf2bd5be5927023049622b7}{showMap}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{117         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_map_a8d5bc6dd9d2aff85bd5fa2a53694b09a}{moveCharacter}}(\textcolor{keywordtype}{int} direction);}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{126         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_map_a01732e2b3324b6b4a195085da7f1872c}{activateItem}}(\textcolor{keywordtype}{int} idx);}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{135         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_map_a3df60793386897a8ac9c98f3b40a190c}{addBomb}}(\mbox{\hyperlink{class_position}{Position}} p); }
+\DoxyCodeLine{136 }
+\DoxyCodeLine{144         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_map_aeadd72ea76ee067bc3764adee48a1454}{activateBomb}}(\textcolor{keywordtype}{int} idx);}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146     private :}
+\DoxyCodeLine{147         \textcolor{keywordtype}{int} m\_nbLines; }
+\DoxyCodeLine{148         \textcolor{keywordtype}{int} m\_nbColumns; }
+\DoxyCodeLine{149         std::vector<std::vector<Tile*>> m\_board; }
+\DoxyCodeLine{150         std::vector<Enemy*> m\_enemies; }
+\DoxyCodeLine{151         std::vector<Bomb*> m\_bomb; }
+\DoxyCodeLine{152         std::vector<Item*> m\_items; }
+\DoxyCodeLine{153         \mbox{\hyperlink{class_bomberman}{Bomberman}} m\_bomberman; }
+\DoxyCodeLine{154         \mbox{\hyperlink{class_tile}{Tile}} m\_goal; }
+\DoxyCodeLine{156 \};}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160  }
+
+\end{DoxyCode}

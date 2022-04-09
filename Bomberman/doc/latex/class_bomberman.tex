@@ -1,0 +1,180 @@
+\hypertarget{class_bomberman}{}\doxysection{Bomberman Class Reference}
+\label{class_bomberman}\index{Bomberman@{Bomberman}}
+
+
+Définition d\textquotesingle{}un personnage \mbox{\hyperlink{class_bomberman}{Bomberman}}.  
+
+
+
+
+{\ttfamily \#include $<$Bomberman.\+h$>$}
+
+Inheritance diagram for Bomberman\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_bomberman}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bomberman_ac59ae7418eaa86176f9ce21f1460e111}{Bomberman}} (int x=0, int y=0, int health=1, int speed=1, int bomb=1)
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut/initialisation de \mbox{\hyperlink{class_bomberman}{Bomberman}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_bomberman_ac98b36adea8255f689c4a17ff60b2497}{get\+Bomb}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur de m\+\_\+bomb. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_bomberman_aa0fd27ced089de5207ab847febfd50d6}{put\+Bomb}} ()
+\begin{DoxyCompactList}\small\item\em Amorcement d\textquotesingle{}une bombe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bomberman_a732668288c3e63ef5a64156c8fae9526}{Pick\+Up\+Bomb}} (int b)
+\begin{DoxyCompactList}\small\item\em Amassement d\textquotesingle{}une bombe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bomberman_a480d7f71a2a4708ac2227fa953163f0b}{add\+Health}} (int h)
+\begin{DoxyCompactList}\small\item\em Ajout points de vie au \mbox{\hyperlink{class_bomberman}{Bomberman}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bomberman_a3c6537728e9401509e886fffd5ad3d07}{augment\+Speed}} (int sp)
+\begin{DoxyCompactList}\small\item\em Augmentation de la vitesse de \mbox{\hyperlink{class_bomberman}{Bomberman}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bomberman_a23128f2b6033aead9f6392f83fb77564}{show\+Character}} () const override
+\begin{DoxyCompactList}\small\item\em Affichage de \mbox{\hyperlink{class_bomberman}{Bomberman}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Définition d\textquotesingle{}un personnage \mbox{\hyperlink{class_bomberman}{Bomberman}}. 
+
+\begin{DoxyAuthor}{Author}
+Romain GARNIER
+\end{DoxyAuthor}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_character}{Character}}
+\end{DoxySeeAlso}
+Hérite de la classe \mbox{\hyperlink{class_character}{Character}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_bomberman_ac59ae7418eaa86176f9ce21f1460e111}\label{class_bomberman_ac59ae7418eaa86176f9ce21f1460e111}} 
+\index{Bomberman@{Bomberman}!Bomberman@{Bomberman}}
+\index{Bomberman@{Bomberman}!Bomberman@{Bomberman}}
+\doxysubsubsection{\texorpdfstring{Bomberman()}{Bomberman()}}
+{\footnotesize\ttfamily Bomberman\+::\+Bomberman (\begin{DoxyParamCaption}\item[{int}]{x = {\ttfamily 0},  }\item[{int}]{y = {\ttfamily 0},  }\item[{int}]{health = {\ttfamily 1},  }\item[{int}]{speed = {\ttfamily 1},  }\item[{int}]{bomb = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Constructeur par défaut/initialisation de \mbox{\hyperlink{class_bomberman}{Bomberman}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & abscisse de la position\\
+\hline
+{\em y} & ordonnée de la position\\
+\hline
+{\em health} & points de vie du joueur\\
+\hline
+{\em speed} & vitesse du joueur\\
+\hline
+{\em bomb} & nombre de bombes possédées \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_bomberman_a480d7f71a2a4708ac2227fa953163f0b}\label{class_bomberman_a480d7f71a2a4708ac2227fa953163f0b}} 
+\index{Bomberman@{Bomberman}!addHealth@{addHealth}}
+\index{addHealth@{addHealth}!Bomberman@{Bomberman}}
+\doxysubsubsection{\texorpdfstring{addHealth()}{addHealth()}}
+{\footnotesize\ttfamily void Bomberman\+::add\+Health (\begin{DoxyParamCaption}\item[{int}]{h }\end{DoxyParamCaption})}
+
+
+
+Ajout points de vie au \mbox{\hyperlink{class_bomberman}{Bomberman}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & nombre de points de vie récupérés\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Romain GARNIER 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{class_bomberman_a3c6537728e9401509e886fffd5ad3d07}\label{class_bomberman_a3c6537728e9401509e886fffd5ad3d07}} 
+\index{Bomberman@{Bomberman}!augmentSpeed@{augmentSpeed}}
+\index{augmentSpeed@{augmentSpeed}!Bomberman@{Bomberman}}
+\doxysubsubsection{\texorpdfstring{augmentSpeed()}{augmentSpeed()}}
+{\footnotesize\ttfamily void Bomberman\+::augment\+Speed (\begin{DoxyParamCaption}\item[{int}]{sp }\end{DoxyParamCaption})}
+
+
+
+Augmentation de la vitesse de \mbox{\hyperlink{class_bomberman}{Bomberman}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sp} & vitesse ajoutée \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_bomberman_ac98b36adea8255f689c4a17ff60b2497}\label{class_bomberman_ac98b36adea8255f689c4a17ff60b2497}} 
+\index{Bomberman@{Bomberman}!getBomb@{getBomb}}
+\index{getBomb@{getBomb}!Bomberman@{Bomberman}}
+\doxysubsubsection{\texorpdfstring{getBomb()}{getBomb()}}
+{\footnotesize\ttfamily int Bomberman\+::get\+Bomb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur de m\+\_\+bomb. 
+
+\begin{DoxyReturn}{Returns}
+entier m\+\_\+bomb 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_bomberman_a732668288c3e63ef5a64156c8fae9526}\label{class_bomberman_a732668288c3e63ef5a64156c8fae9526}} 
+\index{Bomberman@{Bomberman}!PickUpBomb@{PickUpBomb}}
+\index{PickUpBomb@{PickUpBomb}!Bomberman@{Bomberman}}
+\doxysubsubsection{\texorpdfstring{PickUpBomb()}{PickUpBomb()}}
+{\footnotesize\ttfamily void Bomberman\+::\+Pick\+Up\+Bomb (\begin{DoxyParamCaption}\item[{int}]{b }\end{DoxyParamCaption})}
+
+
+
+Amassement d\textquotesingle{}une bombe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & nombre de bombes ramassées\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Romain GARNIER 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{class_bomberman_aa0fd27ced089de5207ab847febfd50d6}\label{class_bomberman_aa0fd27ced089de5207ab847febfd50d6}} 
+\index{Bomberman@{Bomberman}!putBomb@{putBomb}}
+\index{putBomb@{putBomb}!Bomberman@{Bomberman}}
+\doxysubsubsection{\texorpdfstring{putBomb()}{putBomb()}}
+{\footnotesize\ttfamily bool Bomberman\+::put\+Bomb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Amorcement d\textquotesingle{}une bombe. 
+
+\begin{DoxyReturn}{Returns}
+booléen si la bombe à bien été posée
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Romain GARNIER 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{class_bomberman_a23128f2b6033aead9f6392f83fb77564}\label{class_bomberman_a23128f2b6033aead9f6392f83fb77564}} 
+\index{Bomberman@{Bomberman}!showCharacter@{showCharacter}}
+\index{showCharacter@{showCharacter}!Bomberman@{Bomberman}}
+\doxysubsubsection{\texorpdfstring{showCharacter()}{showCharacter()}}
+{\footnotesize\ttfamily void Bomberman\+::show\+Character (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Affichage de \mbox{\hyperlink{class_bomberman}{Bomberman}}. 
+
+méthode héritée de \mbox{\hyperlink{class_character}{Character}} et redéfinie
+
+\begin{DoxyAuthor}{Author}
+Romain GARNIER 
+\end{DoxyAuthor}
+
+
+Implements \mbox{\hyperlink{class_character_a6a51cc31fc966021c66dd34385e38bf4}{Character}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+characters/\mbox{\hyperlink{_bomberman_8h}{Bomberman.\+h}}\item 
+C\+:/\+Users/romte/\+Desktop/\+Bomberman/src/src/characters/Bomberman.\+cpp\end{DoxyCompactItemize}

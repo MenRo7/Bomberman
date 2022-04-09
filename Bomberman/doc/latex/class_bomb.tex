@@ -1,0 +1,179 @@
+\hypertarget{class_bomb}{}\doxysection{Bomb Class Reference}
+\label{class_bomb}\index{Bomb@{Bomb}}
+
+
+Définition d\textquotesingle{}une bombe.  
+
+
+
+
+{\ttfamily \#include $<$Bomb.\+h$>$}
+
+Inheritance diagram for Bomb\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_bomb}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bomb_a060e0f163c58fb3f0d2c0a072e2953af}{Bomb}} (int x=0, int y=0, int time=3)
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut/initialisation de \mbox{\hyperlink{class_bomb}{Bomb}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_bomb_a3c39d75da606ee77c4a9dc6095ae50bf}{activate}} (\mbox{\hyperlink{class_bomberman}{Bomberman}} \&player) override
+\begin{DoxyCompactList}\small\item\em Activation de \mbox{\hyperlink{class_bomb}{Bomb}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bomb_a616f1dbe6eac9122f0cebc58d4cb961c}{show\+Item}} () const override
+\begin{DoxyCompactList}\small\item\em Affichage de \mbox{\hyperlink{class_bomb}{Bomb}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_bomb_acf50bee9ea56cfbcf43d931b68446b2a}{get\+Power}} ()
+\begin{DoxyCompactList}\small\item\em Accesseur de power. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_bomb_a5e9a67290c9f2ebfa9d4c494412ebec1}{get\+Range}} ()
+\begin{DoxyCompactList}\small\item\em Accesseur de range. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_bomb_a3eb3a96cd4e0a53aedf23f0ff1b05c17}{set\+Power}} (int p)
+\begin{DoxyCompactList}\small\item\em Modificateur de power. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_bomb_a8270a96888a3f637fbbb4ed74a1a1abe}{set\+Range}} (int r)
+\begin{DoxyCompactList}\small\item\em Modificateur de range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Définition d\textquotesingle{}une bombe. 
+
+\begin{DoxyAuthor}{Author}
+Armel HARDOUIN
+\end{DoxyAuthor}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_item}{Item}}
+\end{DoxySeeAlso}
+Hérite de la classe \mbox{\hyperlink{class_item}{Item}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_bomb_a060e0f163c58fb3f0d2c0a072e2953af}\label{class_bomb_a060e0f163c58fb3f0d2c0a072e2953af}} 
+\index{Bomb@{Bomb}!Bomb@{Bomb}}
+\index{Bomb@{Bomb}!Bomb@{Bomb}}
+\doxysubsubsection{\texorpdfstring{Bomb()}{Bomb()}}
+{\footnotesize\ttfamily Bomb\+::\+Bomb (\begin{DoxyParamCaption}\item[{int}]{x = {\ttfamily 0},  }\item[{int}]{y = {\ttfamily 0},  }\item[{int}]{time = {\ttfamily 3} }\end{DoxyParamCaption})}
+
+
+
+Constructeur par défaut/initialisation de \mbox{\hyperlink{class_bomb}{Bomb}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & abscisse de la position\\
+\hline
+{\em y} & ordonnée de la position\\
+\hline
+{\em time} & temps avant explosion de la bombe \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_bomb_a3c39d75da606ee77c4a9dc6095ae50bf}\label{class_bomb_a3c39d75da606ee77c4a9dc6095ae50bf}} 
+\index{Bomb@{Bomb}!activate@{activate}}
+\index{activate@{activate}!Bomb@{Bomb}}
+\doxysubsubsection{\texorpdfstring{activate()}{activate()}}
+{\footnotesize\ttfamily bool Bomb\+::activate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bomberman}{Bomberman}} \&}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Activation de \mbox{\hyperlink{class_bomb}{Bomb}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & référence constante vers un \mbox{\hyperlink{class_bomberman}{Bomberman}}\\
+\hline
+\end{DoxyParams}
+méthode héritée de \mbox{\hyperlink{class_item}{Item}} et redéfinie
+
+\begin{DoxyAuthor}{Author}
+Armel HARDOUIN 
+\end{DoxyAuthor}
+
+
+Implements \mbox{\hyperlink{class_item_a067d32fb218dc2005fd1cb6d7e4adc10}{Item}}.
+
+\mbox{\Hypertarget{class_bomb_acf50bee9ea56cfbcf43d931b68446b2a}\label{class_bomb_acf50bee9ea56cfbcf43d931b68446b2a}} 
+\index{Bomb@{Bomb}!getPower@{getPower}}
+\index{getPower@{getPower}!Bomb@{Bomb}}
+\doxysubsubsection{\texorpdfstring{getPower()}{getPower()}}
+{\footnotesize\ttfamily int Bomb\+::get\+Power (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Accesseur de power. 
+
+\begin{DoxyReturn}{Returns}
+int power
+\end{DoxyReturn}
+méthode statique \mbox{\Hypertarget{class_bomb_a5e9a67290c9f2ebfa9d4c494412ebec1}\label{class_bomb_a5e9a67290c9f2ebfa9d4c494412ebec1}} 
+\index{Bomb@{Bomb}!getRange@{getRange}}
+\index{getRange@{getRange}!Bomb@{Bomb}}
+\doxysubsubsection{\texorpdfstring{getRange()}{getRange()}}
+{\footnotesize\ttfamily int Bomb\+::get\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Accesseur de range. 
+
+\begin{DoxyReturn}{Returns}
+int range
+\end{DoxyReturn}
+méthode statique \mbox{\Hypertarget{class_bomb_a3eb3a96cd4e0a53aedf23f0ff1b05c17}\label{class_bomb_a3eb3a96cd4e0a53aedf23f0ff1b05c17}} 
+\index{Bomb@{Bomb}!setPower@{setPower}}
+\index{setPower@{setPower}!Bomb@{Bomb}}
+\doxysubsubsection{\texorpdfstring{setPower()}{setPower()}}
+{\footnotesize\ttfamily void Bomb\+::set\+Power (\begin{DoxyParamCaption}\item[{int}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Modificateur de power. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & nouvelle valeur de power\\
+\hline
+\end{DoxyParams}
+méthode statique \mbox{\Hypertarget{class_bomb_a8270a96888a3f637fbbb4ed74a1a1abe}\label{class_bomb_a8270a96888a3f637fbbb4ed74a1a1abe}} 
+\index{Bomb@{Bomb}!setRange@{setRange}}
+\index{setRange@{setRange}!Bomb@{Bomb}}
+\doxysubsubsection{\texorpdfstring{setRange()}{setRange()}}
+{\footnotesize\ttfamily void Bomb\+::set\+Range (\begin{DoxyParamCaption}\item[{int}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Modificateur de range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & nouvelle valeur de range\\
+\hline
+\end{DoxyParams}
+méthode statique \mbox{\Hypertarget{class_bomb_a616f1dbe6eac9122f0cebc58d4cb961c}\label{class_bomb_a616f1dbe6eac9122f0cebc58d4cb961c}} 
+\index{Bomb@{Bomb}!showItem@{showItem}}
+\index{showItem@{showItem}!Bomb@{Bomb}}
+\doxysubsubsection{\texorpdfstring{showItem()}{showItem()}}
+{\footnotesize\ttfamily void Bomb\+::show\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Affichage de \mbox{\hyperlink{class_bomb}{Bomb}}. 
+
+méthode héritée de \mbox{\hyperlink{class_item}{Item}} et redéfinie
+
+\begin{DoxyAuthor}{Author}
+Armel HARDOUIN 
+\end{DoxyAuthor}
+
+
+Implements \mbox{\hyperlink{class_item_af3fcadbf19e9108f7c3cc0223cce6c4c}{Item}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+items/\mbox{\hyperlink{_bomb_8h}{Bomb.\+h}}\item 
+C\+:/\+Users/romte/\+Desktop/\+Bomberman/src/src/items/Bomb.\+cpp\end{DoxyCompactItemize}

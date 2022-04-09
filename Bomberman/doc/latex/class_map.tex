@@ -1,0 +1,265 @@
+\hypertarget{class_map}{}\doxysection{Map Class Reference}
+\label{class_map}\index{Map@{Map}}
+
+
+Gestion de la carte de jeu.  
+
+
+
+
+{\ttfamily \#include $<$Map.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_map_a212ad66a2f8e34385234cac9eabe055e}{Map}} (int mapid, int lines=8, int columns=10)
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut/par initialisation de \mbox{\hyperlink{class_map}{Map}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_map_aa403fbe09394ccf39747588f5168e3b2}\label{class_map_aa403fbe09394ccf39747588f5168e3b2}} 
+{\bfseries $\sim$\+Map} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{class_map}{Map}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_map_a741df5bd19d69169210d64f483914f26}{get\+Lines}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}attribut m\+\_\+nb\+Lines. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_map_a9ba9ffb276bc374a9fe43a48df311c84}{get\+Columns}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}attribut m\+\_\+nb\+Columns. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bomberman}{Bomberman}} \mbox{\hyperlink{class_map_ac704daf08e619bc86c2b40e214e15ba7}{get\+Bomberman}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}attribut m\+\_\+bomberman. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_tile}{Tile}} \mbox{\hyperlink{class_map_a1618acc599eef28811230a393d680a7a}{get\+Goal}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}attribut m\+\_\+goal. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_enemy}{Enemy}} $\ast$ $>$ \mbox{\hyperlink{class_map_ab07c3345c2abfa22f2effddb5a454cb5}{get\+Enemies}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}attribut m\+\_\+enemies. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_bomb}{Bomb}} $\ast$ $>$ \mbox{\hyperlink{class_map_a8ea0cc69e9de38e622f07d9d088f108f}{get\+Bomb}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}attribut m\+\_\+bomb. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_item}{Item}} $\ast$ $>$ \mbox{\hyperlink{class_map_a308d5c4c6bb29604228d03492ac74d93}{get\+Items}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}attribut m\+\_\+items. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_map_a49670a6c7bf2bd5be5927023049622b7}{show\+Map}} () const
+\begin{DoxyCompactList}\small\item\em Affichage de la carte. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_map_a8d5bc6dd9d2aff85bd5fa2a53694b09a}{move\+Character}} (int direction)
+\begin{DoxyCompactList}\small\item\em Mouvement du joueur sur la Ma. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_map_a01732e2b3324b6b4a195085da7f1872c}{activate\+Item}} (int idx)
+\begin{DoxyCompactList}\small\item\em Activation d\textquotesingle{}un item sur la \mbox{\hyperlink{class_map}{Map}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_map_a3df60793386897a8ac9c98f3b40a190c}{add\+Bomb}} (\mbox{\hyperlink{class_position}{Position}} p)
+\begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}une bombe sur la \mbox{\hyperlink{class_map}{Map}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_map_aeadd72ea76ee067bc3764adee48a1454}{activate\+Bomb}} (int idx)
+\begin{DoxyCompactList}\small\item\em Activation d\textquotesingle{}une bombe sur la \mbox{\hyperlink{class_map}{Map}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestion de la carte de jeu. 
+
+\begin{DoxyAuthor}{Author}
+Armel HARDOUIN \& Romain GARNIER
+\end{DoxyAuthor}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_tile}{Tile}} 
+
+\mbox{\hyperlink{class_enemy}{Enemy}} 
+
+\mbox{\hyperlink{class_item}{Item}} 
+
+\mbox{\hyperlink{class_bomb}{Bomb}} 
+
+\mbox{\hyperlink{class_bomberman}{Bomberman}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_map_a212ad66a2f8e34385234cac9eabe055e}\label{class_map_a212ad66a2f8e34385234cac9eabe055e}} 
+\index{Map@{Map}!Map@{Map}}
+\index{Map@{Map}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}}
+{\footnotesize\ttfamily Map\+::\+Map (\begin{DoxyParamCaption}\item[{int}]{mapid,  }\item[{int}]{lines = {\ttfamily 8},  }\item[{int}]{columns = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+
+
+Constructeur par défaut/par initialisation de \mbox{\hyperlink{class_map}{Map}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mapid} & Numéro du fichier du level à jouer \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_map_aeadd72ea76ee067bc3764adee48a1454}\label{class_map_aeadd72ea76ee067bc3764adee48a1454}} 
+\index{Map@{Map}!activateBomb@{activateBomb}}
+\index{activateBomb@{activateBomb}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{activateBomb()}{activateBomb()}}
+{\footnotesize\ttfamily void Map\+::activate\+Bomb (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})}
+
+
+
+Activation d\textquotesingle{}une bombe sur la \mbox{\hyperlink{class_map}{Map}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & indice de la bombe dans le vecteur m\+\_\+bomb\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Romain GARNIER 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{class_map_a01732e2b3324b6b4a195085da7f1872c}\label{class_map_a01732e2b3324b6b4a195085da7f1872c}} 
+\index{Map@{Map}!activateItem@{activateItem}}
+\index{activateItem@{activateItem}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{activateItem()}{activateItem()}}
+{\footnotesize\ttfamily void Map\+::activate\+Item (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})}
+
+
+
+Activation d\textquotesingle{}un item sur la \mbox{\hyperlink{class_map}{Map}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & indice de l\textquotesingle{}item dans vecteur m\+\_\+items\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Romain GARNIER 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{class_map_a3df60793386897a8ac9c98f3b40a190c}\label{class_map_a3df60793386897a8ac9c98f3b40a190c}} 
+\index{Map@{Map}!addBomb@{addBomb}}
+\index{addBomb@{addBomb}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{addBomb()}{addBomb()}}
+{\footnotesize\ttfamily void Map\+::add\+Bomb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_position}{Position}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Ajout d\textquotesingle{}une bombe sur la \mbox{\hyperlink{class_map}{Map}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & position où poser la bombe\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Armel HARDOUIN 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{class_map_a8ea0cc69e9de38e622f07d9d088f108f}\label{class_map_a8ea0cc69e9de38e622f07d9d088f108f}} 
+\index{Map@{Map}!getBomb@{getBomb}}
+\index{getBomb@{getBomb}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{getBomb()}{getBomb()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_bomb}{Bomb}} $\ast$ $>$ Map\+::get\+Bomb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur de l\textquotesingle{}attribut m\+\_\+bomb. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Bomb$\ast$$>$ m\+\_\+bomb 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_map_ac704daf08e619bc86c2b40e214e15ba7}\label{class_map_ac704daf08e619bc86c2b40e214e15ba7}} 
+\index{Map@{Map}!getBomberman@{getBomberman}}
+\index{getBomberman@{getBomberman}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{getBomberman()}{getBomberman()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bomberman}{Bomberman}} Map\+::get\+Bomberman (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur de l\textquotesingle{}attribut m\+\_\+bomberman. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_bomberman}{Bomberman}} m\+\_\+bomberman 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_map_a9ba9ffb276bc374a9fe43a48df311c84}\label{class_map_a9ba9ffb276bc374a9fe43a48df311c84}} 
+\index{Map@{Map}!getColumns@{getColumns}}
+\index{getColumns@{getColumns}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{getColumns()}{getColumns()}}
+{\footnotesize\ttfamily int Map\+::get\+Columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur de l\textquotesingle{}attribut m\+\_\+nb\+Columns. 
+
+\begin{DoxyReturn}{Returns}
+ntier m\+\_\+nb\+Columns 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_map_ab07c3345c2abfa22f2effddb5a454cb5}\label{class_map_ab07c3345c2abfa22f2effddb5a454cb5}} 
+\index{Map@{Map}!getEnemies@{getEnemies}}
+\index{getEnemies@{getEnemies}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{getEnemies()}{getEnemies()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_enemy}{Enemy}} $\ast$ $>$ Map\+::get\+Enemies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur de l\textquotesingle{}attribut m\+\_\+enemies. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Enemy$\ast$$>$ m\+\_\+enemies 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_map_a1618acc599eef28811230a393d680a7a}\label{class_map_a1618acc599eef28811230a393d680a7a}} 
+\index{Map@{Map}!getGoal@{getGoal}}
+\index{getGoal@{getGoal}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{getGoal()}{getGoal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tile}{Tile}} Map\+::get\+Goal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur de l\textquotesingle{}attribut m\+\_\+goal. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_tile}{Tile}} m\+\_\+goal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_map_a308d5c4c6bb29604228d03492ac74d93}\label{class_map_a308d5c4c6bb29604228d03492ac74d93}} 
+\index{Map@{Map}!getItems@{getItems}}
+\index{getItems@{getItems}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{getItems()}{getItems()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_item}{Item}} $\ast$ $>$ Map\+::get\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur de l\textquotesingle{}attribut m\+\_\+items. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Item$\ast$$>$ m\+\_\+items 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_map_a741df5bd19d69169210d64f483914f26}\label{class_map_a741df5bd19d69169210d64f483914f26}} 
+\index{Map@{Map}!getLines@{getLines}}
+\index{getLines@{getLines}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{getLines()}{getLines()}}
+{\footnotesize\ttfamily int Map\+::get\+Lines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur de l\textquotesingle{}attribut m\+\_\+nb\+Lines. 
+
+\begin{DoxyReturn}{Returns}
+entier m\+\_\+nb\+Lines 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_map_a8d5bc6dd9d2aff85bd5fa2a53694b09a}\label{class_map_a8d5bc6dd9d2aff85bd5fa2a53694b09a}} 
+\index{Map@{Map}!moveCharacter@{moveCharacter}}
+\index{moveCharacter@{moveCharacter}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{moveCharacter()}{moveCharacter()}}
+{\footnotesize\ttfamily void Map\+::move\+Character (\begin{DoxyParamCaption}\item[{int}]{direction }\end{DoxyParamCaption})}
+
+
+
+Mouvement du joueur sur la Ma. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & direction à suivre par le joueur\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Romain GARNIER 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{class_map_a49670a6c7bf2bd5be5927023049622b7}\label{class_map_a49670a6c7bf2bd5be5927023049622b7}} 
+\index{Map@{Map}!showMap@{showMap}}
+\index{showMap@{showMap}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{showMap()}{showMap()}}
+{\footnotesize\ttfamily void Map\+::show\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Affichage de la carte. 
+
+\begin{DoxyAuthor}{Author}
+Romain GARNIER \& Armel HARDOUIN 
+\end{DoxyAuthor}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+map/\mbox{\hyperlink{_map_8h}{Map.\+h}}\item 
+C\+:/\+Users/romte/\+Desktop/\+Bomberman/src/src/map/Map.\+cpp\end{DoxyCompactItemize}

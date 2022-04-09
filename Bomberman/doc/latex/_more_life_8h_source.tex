@@ -1,0 +1,30 @@
+\hypertarget{_more_life_8h_source}{}\doxysection{More\+Life.\+h}
+\label{_more_life_8h_source}\index{items/MoreLife.h@{items/MoreLife.h}}
+\mbox{\hyperlink{_more_life_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef \_\_MORELIFE\_\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define \_\_MORELIFE\_\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_item_8h}{Item.h}}"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}../characters/Bomberman.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{class_more_life}{MoreLife}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_item}{Item}} \{}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     public :}
+\DoxyCodeLine{28         \mbox{\hyperlink{class_more_life}{MoreLife}}(\textcolor{keywordtype}{int} x = 0, \textcolor{keywordtype}{int} y = 0, \textcolor{keywordtype}{int} life = 1);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         \textcolor{keywordtype}{void} augmentHealth(\mbox{\hyperlink{class_bomberman}{Bomberman}}\& player);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{39         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_more_life_a07fd850060fcf214318a67768b475500}{activate}}(\mbox{\hyperlink{class_bomberman}{Bomberman}}\& player) \textcolor{keyword}{override};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{48         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_more_life_a52609bba4b1d6fd74909d22ce145b33c}{showItem}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     private :}
+\DoxyCodeLine{51         \textcolor{keywordtype}{int} m\_moreLife; }
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
